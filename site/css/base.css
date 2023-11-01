@@ -7,6 +7,7 @@
     --text-color: #747474;
     --red-color: #d0021b;
     --black-color: #222222;
+    --tab-color: #555555;
 }
 
 * {
@@ -32,4 +33,15 @@ body {
     width: 100%;
     max-width: 1350px;
     padding: 0 15px;
+}
+
+.section {
+    padding-top: 60px;
+}
+
+.section_heading {
+    font-weight: 500;
+    font-size: 2.2rem;
+    text-align: center;
+    margin: 5px 0;
 }
