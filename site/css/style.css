@@ -622,6 +622,9 @@ main {
     font-size: 1.8rem;
 }
 
+
+/* responsive */
+
 @media (max-width: 992px) {
     .header_banner-block .header_banner-img {
         height: calc(var(--window-height) - var(--topbar-height) - 10vh);
