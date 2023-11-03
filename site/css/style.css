@@ -602,3 +602,58 @@ main {
 .policy_item-title {
     font-size: 1.8rem;
 }
+
+footer {
+    background-color: var(--black-color);
+    padding: 25px 0;
+    color: #e9ecef;
+}
+
+.footer_main {
+    display: flex;
+
+}
+
+.footer_item {
+    margin-bottom: 20px;
+    /* width: 25%; */
+    flex: 1;
+}
+
+.footer_item-title {
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: 0.3px;
+}
+
+.footer_info-list {
+    list-style: none;
+}
+
+.footer_info-item {
+    margin-bottom: 8px;
+    line-height: 2.2rem;
+}
+
+.footer_info-item img {
+    width: 150px;
+}
+
+.footer_fanpage {
+    width: 290px;
+}
+
+.footer_item:first-child,
+.footer_item:nth-child(3) {
+    flex: 2;
+}
+
+.footer_author {
+    border-top: 1px dotted #e9ecef;
+    padding-top: 25px;
+}
+
+.footer_author p {
+    text-align: center;
+}
