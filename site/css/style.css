@@ -650,7 +650,7 @@ footer {
 }
 
 .footer_author {
-    border-top: 1px dotted #e9ecef;
+    border-top: 1px dashed #e9ecef;
     padding-top: 25px;
 }
 
