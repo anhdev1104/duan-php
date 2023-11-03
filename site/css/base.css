@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
-
 :root {
+    --window-height: 670px;
+    --topbar-height: 48px;
     --primary-color: #323232;
     --white-color: #fff;
     --title-color: #5c5c5c;
