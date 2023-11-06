@@ -232,13 +232,14 @@ main {
 .product_list {
     margin-top: 50px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     margin-bottom: 20px;
+    gap: 20px;
 }
 
 .product_item {
-    max-width: 295px;
+    width: 25%;
+    max-width: 100%;
     margin-bottom: 20px;
 }
 
@@ -298,6 +299,7 @@ main {
 
 .product_img-box img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
     object-position: center;
     transition: all .3s ease-in;
@@ -441,9 +443,12 @@ main {
     opacity: 1;
 }
 
+.gift_item img {
+    transition: all ease-in-out 3s;
+}
+
 .gift_item:hover img {
     transform: scale(1.2);
-    transition: all ease-in-out 3.5s;
 }
 
 .gift_img {
@@ -631,27 +636,33 @@ main {
     }
 }
 
+/* 
 @media (max-width: 767px) {
     .container.section_heading {
         margin-bottom: 5px;
     }
+
     .container h1 {
         font-size: 1.5em;
     }
+
     .container.tab_product {
         position: relative;
         overflow: hidden;
         margin: 0 -15px;
     }
+
     .container.product_list {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
     }
+
     ul.tab_product li a {
         font-size: 18px;
     }
+
     .container .product_collection.home-box-item {
         width: 100%;
     }
@@ -662,17 +673,21 @@ main {
         display: flex;
         flex-direction: column
     }
+
     .gift_item {
         width: 80%;
     }
+
     .product_item,
     .product_collection-main {
         margin-left: 100px;
     }
+
     .product_collection-item {
         display: block;
         width: 100%;
     }
+
     .product_new {
         width: 100%;
         padding: 0;
@@ -684,9 +699,11 @@ main {
     .product_posts-item {
         width: 33.33333333%;
     }
+
     .product_posts-item a {
         text-decoration: none;
     }
+
     .product_posts-heading {
         text-decoration: none;
         font-weight: 300;
@@ -700,7 +717,7 @@ main {
     .header_logo {
         margin: auto;
     }
-}
+} */
 
 footer {
     background-color: var(--black-color);

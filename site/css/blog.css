@@ -51,6 +51,7 @@
 }
 
 .blog_article_img {
+    cursor: pointer;
     width: 160px;
     height: 50px;
 }
@@ -90,20 +91,30 @@ h3 {
 .blog_content_submenu a {
     text-decoration: none;
     color: #5c5c5c;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icon_plus_submenu:hover {
     border: 1px solid #747474;
+    transition: all .2s ease;
 }
 
 .blog_content_submenu {
-    padding: 12px 30px 12px 0px;
+    padding: 12px 0 12px 0px;
     text-align: left;
     display: list-item;
     font-size: 14px;
     line-height: 19.6px;
-    font-weight: 500px;
-    padding-right: 30px;
+}
+
+.blog_content_submenu:not(:last-child) {
+    border-bottom: 1px dashed #ccc;
+}
+
+.blog_content_submenu span:first-child {
+    font-weight: 500;
 }
 
 .blog_article ul li {
@@ -171,6 +182,7 @@ h3 {
 
 .zoom {
     position: absolute;
+    cursor: pointer;
 }
 
 .blog_content_img .zoom img:hover {
