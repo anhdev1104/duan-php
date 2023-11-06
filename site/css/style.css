@@ -622,86 +622,6 @@ main {
     font-size: 1.8rem;
 }
 
-
-/* responsive */
-
-@media (max-width: 992px) {
-    .header_banner-block .header_banner-img {
-        height: calc(var(--window-height) - var(--topbar-height) - 10vh);
-    }
-}
-
-@media (max-width: 767px) {
-    .container.section_heading {
-        margin-bottom: 5px;
-    }
-    .container h1 {
-        font-size: 1.5em;
-    }
-    .container.tab_product {
-        position: relative;
-        overflow: hidden;
-        margin: 0 -15px;
-    }
-    .container.product_list {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-    ul.tab_product li a {
-        font-size: 18px;
-    }
-    .container .product_collection.home-box-item {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .gift_wrap {
-        display: flex;
-        flex-direction: column
-    }
-    .gift_item {
-        width: 80%;
-    }
-    .product_item,
-    .product_collection-main {
-        margin-left: 100px;
-    }
-    .product_collection-item {
-        display: block;
-        width: 100%;
-    }
-    .product_new {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 90px;
-    }
-}
-
-@media (max-width: 768px) {
-    .product_posts-item {
-        width: 33.33333333%;
-    }
-    .product_posts-item a {
-        text-decoration: none;
-    }
-    .product_posts-heading {
-        text-decoration: none;
-        font-weight: 300;
-        color: var(--title-color);
-        font-size: 0.1rem;
-        transition: all ease .3s;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .header_logo {
-        margin: auto;
-    }
-}
-
 footer {
     background-color: var(--black-color);
     padding: 25px 0;
@@ -714,8 +634,9 @@ footer {
 
 .footer_item {
     margin-bottom: 20px;
-    /* width: 25%; */
+    width: 25%;
     flex: 1;
+    overflow: hidden;
 }
 
 .footer_item-title {
@@ -739,13 +660,14 @@ footer {
 }
 
 .footer_fanpage {
-    width: 290px;
+    width: 100%;
 }
 
-.footer_item:first-child,
-.footer_item:nth-child(3) {
+
+/* .footer_item:first-child,
+.footer_item:nth-child(1) {
     flex: 2;
-}
+} */
 
 .footer_author {
     border-top: 1px dashed #e9ecef;
@@ -756,5 +678,10 @@ footer {
     text-align: center;
 }
 
+.footer_offical {
+    margin-left: 100px;
+}
 
-/* >>>>>>>9eeca010258707ff0a09c29be85a1a7d724fcc37 */
+.footer_contact {
+    margin-right: 100px;
+}
