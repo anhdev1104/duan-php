@@ -27,6 +27,7 @@ body {
     background-color: var(--white-color);
     color: var(--text-color);
     font-size: 1.4rem;
+    text-decoration: none;
 }
 
 .container {
