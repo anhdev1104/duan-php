@@ -109,15 +109,11 @@
     }
 }
 
-
-/* responsive footer */
-
 @media (max-width: 768px) {
     .footer_item-title {
         margin-bottom: 20px;
         font-weight: 500;
         font-size: 1.1rem;
-        /* letter-spacing: 0.3px; */
     }
     .footer_info-item {
         margin-bottom: 0px;
