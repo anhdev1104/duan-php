@@ -274,8 +274,22 @@ main {
     gap: 20px;
 }
 
+.product_list_perfume{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
 .product_item {
     width: 25%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.product_item_perfume{
+    width: 33.33%;
     max-width: 100%;
     margin-bottom: 20px;
 }

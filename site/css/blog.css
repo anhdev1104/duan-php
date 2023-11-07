@@ -14,11 +14,15 @@
 
 .blog_header_test {
     padding: 15px 0px;
+    margin-left: 100px;
 }
 
-.blog_header a {
+.blog_header_test a{
     color: #747474;
-    margin-left: 100px;
+    text-decoration: none;
+}
+
+.blog_header {
     text-decoration: none;
 }
 
@@ -60,7 +64,7 @@
     width: 100%;
 }
 
-h3 {
+.blog_article h3 {
     color: #5c5c5c;
     font-family: Quicksand;
     font-size: 18px;
