@@ -135,3 +135,7 @@
     color: #5c5c5c;
     font-weight: 500;
 }
+
+.login_recover_password{
+    display: none;
+}
