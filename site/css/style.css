@@ -274,7 +274,7 @@ main {
     gap: 20px;
 }
 
-.product_list_perfume{
+.product_list_perfume {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -288,11 +288,6 @@ main {
     margin-bottom: 20px;
 }
 
-.product_item_perfume{
-    width: 33.33%;
-    max-width: 100%;
-    margin-bottom: 20px;
-}
 
 .product_img-box {
     position: relative;
