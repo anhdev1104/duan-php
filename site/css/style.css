@@ -116,9 +116,9 @@
     font-weight: 500;
     font-size: 1.6rem;
     letter-spacing: 1.5px;
-    padding-bottom: 15px;
-    margin-top: 15px;
+    padding: 15px 0;
 }
+
 
 .header_menu-item a::after {
     content: "";
@@ -165,6 +165,7 @@
     line-height: 1.8rem;
     text-align: left;
     padding: 9px 18px;
+    margin: 4px 0;
 }
 
 .header_submenu-item:hover>a {
