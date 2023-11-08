@@ -1,62 +1,66 @@
-.introduce{
-    margin-top: 150px;
+.introduce {
+    margin-top: 125px;
 }
 
-.introduce_content{
+.introduce p {
+    line-height: 1.6;
+}
+
+.introduce_content {
     margin-left: 30px;
 }
 
-.introduce_content h1{
+.introduce_content h1 {
     font-size: 30px;
     font-weight: 700;
     margin-bottom: 30px;
 }
 
-.introduce_content{
-    width: 80%;
+.introduce_content {
+    width: 75%;
 }
 
-.introduce_content_page p{
+.introduce_content_page p {
     margin-bottom: 20px;
 }
 
-h2{
+h2 {
     font-size: 28px;
     font-weight: 500;
 }
 
-.introduce_content_page ul li{
+.introduce_content_page ul li {
     margin-top: 10px;
     margin-left: 40px;
 }
 
-.introduce_content_page h3{
+.introduce_content_page h3 {
     font-size: 2.4rem;
     font-weight: 700px;
 }
 
-.introduce_img_left{
+.introduce_img_left {
     width: 100%;
 }
 
-.introduce_img_left img{
+.introduce_img_left img {
     width: 100%;
 }
 
-.introduce_img_left{
+.introduce_img_left {
     margin-bottom: 30px;
     position: relative;
     overflow: hidden;
 }
 
-.introduce_img_left:hover::before{
+.introduce_img_left:hover::before {
     right: 50%;
     left: 50%;
     width: 0;
     background: rgba(255, 255, 255, 0.4);
 }
 
-.introduce_img_left::before{
+.introduce_img_left::before {
     position: absolute;
     content: '';
     width: 100%;
@@ -71,7 +75,7 @@ h2{
     -o-transition: all 0.5s ease-in-out;
 }
 
-.introduce_img_left::after{
+.introduce_img_left::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -85,7 +89,7 @@ h2{
     -o-transition: all 0.5s ease-in-out;
 }
 
-.introduce_img_left:hover::after{
+.introduce_img_left:hover::after {
     top: 50%;
     bottom: 50%;
     height: 0;
