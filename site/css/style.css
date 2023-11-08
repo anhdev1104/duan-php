@@ -116,8 +116,7 @@
     font-weight: 500;
     font-size: 1.6rem;
     letter-spacing: 1.5px;
-    padding-bottom: 15px;
-    margin-top: 15px;
+    padding: 15px 0;
 }
 
 .header_menu-item a::after {
@@ -165,6 +164,7 @@
     line-height: 1.8rem;
     text-align: left;
     padding: 9px 18px;
+    margin: 4px 0;
 }
 
 .header_submenu-item:hover>a {
@@ -472,7 +472,7 @@ main {
 
 .gift_item {
     position: relative;
-    width: 33.33333333%;
+    /* width: 33.33333333%; */
     display: block;
     color: var(--white-color);
     overflow: hidden;

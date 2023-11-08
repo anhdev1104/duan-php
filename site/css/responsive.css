@@ -28,6 +28,9 @@
             .product_item {
                 width: 40%;
             }
+            .gift_item {
+                width: 60%;
+            }
             .product_collection-main {
                 display: grid;
                 justify-content: center;
@@ -53,11 +56,11 @@
         /* mobile < 740px */
         
         @media (max-width: 46.1875em) {
-            .tab_product {
-                /* flex-wrap: nowrap; */
-                /* justify-content: flex-start;
-                align-items: center; */
-            }
+            /* .tab_product {
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                align-items: center;
+            } */
             .tab_product-item {
                 /* font-size: 1.4rem; */
             }

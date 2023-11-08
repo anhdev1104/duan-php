@@ -1,6 +1,5 @@
 .contact_main-wrapper {
     display: flex;
-    height: 1050px;
 }
 
 .contact_main_right {
@@ -24,7 +23,7 @@
 }
 
 .contact {
-    margin-top: 150px;
+    margin-top: 125px;
 }
 
 .contact_map {
@@ -83,4 +82,5 @@ strong {
 
 .contact_btn {
     margin-top: 20px;
+    cursor: pointer;
 }
