@@ -20,8 +20,7 @@ window.addEventListener(
     debounceFn(function () {
         const headerFixed = document.querySelector('.header-fixed');
         const scrollY = window.scrollY;
-        console.log(scrollY);
-        if (scrollY >= 500) {
+        if (scrollY >= 300) {
             headerFixed && headerFixed.classList.add('is-fixed');
         } else {
             headerFixed && headerFixed.classList.remove('is-fixed');
