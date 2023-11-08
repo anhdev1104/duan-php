@@ -43,6 +43,8 @@
     border: 0;
     background-color: #ededed;
     font-weight: 500;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.6rem;
 }
 
 .login_form_name input::after {
@@ -72,7 +74,7 @@
 
 /*radio dang ky*/
 
-.radio_register_sex{
+.radio_register_sex {
     margin-bottom: 30px;
 }
 
@@ -130,12 +132,12 @@
     background: black;
 }
 
-.register_come_back{
+.register_come_back {
     text-decoration: none;
     color: #5c5c5c;
     font-weight: 500;
 }
 
-.login_recover_password{
+.login_recover_password {
     display: none;
 }
