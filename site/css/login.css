@@ -41,10 +41,16 @@
     width: 100%;
     padding: 20px;
     border: 0;
+    outline: none;
     background-color: #ededed;
     font-weight: 500;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.6rem;
+    border: 1px solid #dbdbdb;
+}
+
+.login_form_name input:focus {
+    background-color: var(--white-color);
 }
 
 .login_form_name input::after {
@@ -58,18 +64,18 @@
 
 .action_account_custommer {
     display: flex;
-    margin-bottom: 35px;
+    align-items: center;
 }
 
 .action_account_custommer div {
-    margin-top: 25px;
+    margin-top: 20px;
     margin-left: 20px;
 }
 
 .action_account_custommer div a {
     text-decoration: none;
     color: #5c5c5c;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /*radio dang ky*/
