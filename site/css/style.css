@@ -746,3 +746,7 @@ footer {
 .footer_author p {
     text-align: center;
 }
+
+.header__bars-menu {
+    display: none;
+}

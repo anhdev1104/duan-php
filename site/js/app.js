@@ -1,10 +1,10 @@
 // scroll header
 function debounceFn(func, wait, immediate) {
     let timeout;
-    return function () {
+    return function() {
         let context = this,
             args = arguments;
-        let later = function () {
+        let later = function() {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
@@ -17,7 +17,7 @@ function debounceFn(func, wait, immediate) {
 
 window.addEventListener(
     'scroll',
-    debounceFn(function () {
+    debounceFn(function() {
         const headerFixed = document.querySelector('.header-fixed');
         const scrollY = window.scrollY;
         if (scrollY >= 300) {

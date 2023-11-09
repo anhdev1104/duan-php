@@ -17,6 +17,9 @@
             .header_menu {
                 display: none;
             }
+            .header__bars-menu {
+                display: block;
+            }
         }
         /* Tablet: width >= 740px and width < 1024px  */
         
