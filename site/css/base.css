@@ -125,8 +125,8 @@ body {
     text-decoration: none;
 }
 
-.button_login:hover{
-    color: #252a2b;  
+.button_login:hover {
+    color: #252a2b;
 }
 
 .button_login:before {
