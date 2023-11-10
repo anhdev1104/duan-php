@@ -50,12 +50,12 @@ strong {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    gap: 20px;
 }
 
 .contact_address_tel input {
     padding: 15px;
-    width: 47%;
-    border: 1px solid #ededed;
+    width: 50%;
 }
 
 .contact_form_content {
@@ -64,9 +64,9 @@ strong {
 
 .contact_form_content textarea {
     width: 100%;
-    border: 1px solid #ededed;
     padding-top: 10px;
     padding-left: 16px;
+
 }
 
 .contact_protect {
@@ -83,4 +83,12 @@ strong {
 .contact_btn {
     margin-top: 20px;
     cursor: pointer;
+}
+
+.contact_form_reminders form input,
+.contact_form_reminders form textarea {
+    font-family: 'Quicksand', sans-serif;
+    border: 1px solid var(--black-color);
+    outline: none;
+    font-weight: 500;
 }
