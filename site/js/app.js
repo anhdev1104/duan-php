@@ -80,6 +80,31 @@ window.addEventListener('load', () => {
     });
 });
 
+// Navbar
+window.addEventListener('load', () => {
+    const navbarIcons = document.querySelectorAll('.navbar-icon');
+    const navbarClose = document.querySelector('.navbar_head-close');
+    const overLay = document.querySelector('.over-lay');
+    const navbarMenu = document.querySelector('.navbar_menu');
+
+    navbarIcons.forEach((navbarIcon) =>
+        navbarIcon.addEventListener('click', () => {
+            overLay.classList.add('isActiveOverlay');
+            navbarMenu.classList.add('isActiveNavbar');
+        })
+    );
+
+    overLay.addEventListener('click', () => {
+        overLay.classList.remove('isActiveOverlay');
+        navbarMenu.classList.remove('isActiveNavbar');
+    });
+
+    navbarClose.addEventListener('click', () => {
+        overLay.classList.remove('isActiveOverlay');
+        navbarMenu.classList.remove('isActiveNavbar');
+    });
+});
+
 /* js recove password */
 document
     .getElementById('quenMatKhauLink')
