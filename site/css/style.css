@@ -77,7 +77,9 @@
 .header_action-item {
     text-decoration: none;
     color: #000;
+    font-size: 2.4rem;
 }
+
 
 .header_box-item--12 {
     width: 100%;
@@ -87,7 +89,6 @@
 
 .header_menu {
     display: flex;
-    flex-wrap: wrap;
     gap: 5px;
     align-items: center;
     list-style: none;
@@ -96,7 +97,8 @@
 .header_menu-item {
     position: relative;
     margin: 0 8px;
-    display: block;
+    display: flex;
+    align-items: center;
 }
 
 .header_menu-item:hover>a::after {
@@ -105,7 +107,7 @@
 
 .header_menu-item:hover .header_submenu {
     opacity: 1;
-    top: 97.5%;
+    top: 96%;
     visibility: visible;
 }
 
@@ -116,8 +118,7 @@
     font-weight: 500;
     font-size: 1.6rem;
     letter-spacing: 1.5px;
-    line-height: 6rem;
-    display: inline-block;
+    padding: 15px 0;
 }
 
 .header_menu-item a::after {
@@ -134,6 +135,9 @@
 .header_menu-item i {
     font-size: 1rem;
     margin-left: 4px;
+    display: block;
+    padding-bottom: 12px;
+    margin-top: 15px;
 }
 
 .header_submenu {
@@ -162,6 +166,7 @@
     line-height: 1.8rem;
     text-align: left;
     padding: 9px 18px;
+    margin: 4px 0;
 }
 
 .header_submenu-item:hover>a {
@@ -169,6 +174,157 @@
     transition: all ease .3s;
     color: #000 !important;
     font-weight: 500;
+}
+
+/* navbar */
+.navbar {
+    display: none;
+}
+
+.over-lay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1999;
+    animation: fadeIn ease-in-out .3s forwards;
+    display: none;
+}
+
+.over-lay.isActiveOverlay {
+    display: block;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.navbar_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    max-width: 400px;
+    width: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all ease-in-out .3s;
+}
+
+.navbar_menu.isActiveNavbar {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+
+.navbar_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.navbar_head-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.navbar_head-close {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.navbar_menu-main {
+    list-style-type: none;
+}
+
+.navbar_menu-item {
+    transition: all .25s linear;
+    color: var(--title-color);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.navbar_menu-item:hover {
+    color: #000;
+}
+
+.navbar_menu-item a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.navbar_menu-item i {
+    cursor: pointer;
+}
+
+.navbar_login {
+    margin-top: 50px;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    gap: 20px;
+    color: var(--title-color);
+    font-size: 1.8rem;
+    transition: all linear .25s;
+}
+
+.navbar_login:hover {
+    color: #000;
+}
+
+.navbar_login span {
+    font-weight: 600;
+}
+
+/* header-fixed */
+.is-fixed {
+    top: 0 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.header-fixed {
+    position: fixed;
+    background-color: #fff;
+    top: -100px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header_top-wrap-fixed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_box-action-fixed {
+    margin-bottom: 15px;
+}
+
+.header-fixed-link {
+    line-height: 4rem;
 }
 
 
@@ -237,8 +393,22 @@ main {
     gap: 20px;
 }
 
+.product_list_perfume {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
 .product_item {
     width: 25%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.product_item_perfume {
+    width: 33.33%;
     max-width: 100%;
     margin-bottom: 20px;
 }
@@ -369,7 +539,7 @@ main {
 
 .collection_img-box {
     width: 100%;
-    height: 300px;
+    /* height: 300px; */
 }
 
 .collection_img {
@@ -419,7 +589,7 @@ main {
 
 .gift_item {
     position: relative;
-    width: 33.33333333%;
+    /* width: 33.33333333%; */
     display: block;
     color: var(--white-color);
     overflow: hidden;
@@ -627,98 +797,6 @@ main {
     font-size: 1.8rem;
 }
 
-
-/* responsive */
-
-@media (max-width: 992px) {
-    .header_banner-block .header_banner-img {
-        height: calc(var(--window-height) - var(--topbar-height) - 10vh);
-    }
-}
-
-/* 
-@media (max-width: 767px) {
-    .container.section_heading {
-        margin-bottom: 5px;
-    }
-
-    .container h1 {
-        font-size: 1.5em;
-    }
-
-    .container.tab_product {
-        position: relative;
-        overflow: hidden;
-        margin: 0 -15px;
-    }
-
-    .container.product_list {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    ul.tab_product li a {
-        font-size: 18px;
-    }
-
-    .container .product_collection.home-box-item {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .gift_wrap {
-        display: flex;
-        flex-direction: column
-    }
-
-    .gift_item {
-        width: 80%;
-    }
-
-    .product_item,
-    .product_collection-main {
-        margin-left: 100px;
-    }
-
-    .product_collection-item {
-        display: block;
-        width: 100%;
-    }
-
-    .product_new {
-        width: 100%;
-        padding: 0;
-        margin-bottom: 90px;
-    }
-}
-
-@media (max-width: 768px) {
-    .product_posts-item {
-        width: 33.33333333%;
-    }
-
-    .product_posts-item a {
-        text-decoration: none;
-    }
-
-    .product_posts-heading {
-        text-decoration: none;
-        font-weight: 300;
-        color: var(--title-color);
-        font-size: 0.1rem;
-        transition: all ease .3s;
-    }
-}
-
-@media only screen and (min-width: 992px) {
-    .header_logo {
-        margin: auto;
-    }
-} */
-
 footer {
     background-color: var(--black-color);
     padding: 25px 0;
@@ -726,7 +804,11 @@ footer {
 }
 
 .footer_main {
-    display: flex;
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    overflow: hidden;
+    align-items: start;
 }
 
 .footer_item {
@@ -772,6 +854,3 @@ footer {
 .footer_author p {
     text-align: center;
 }
-
-
-/* >>>>>>>9eeca010258707ff0a09c29be85a1a7d724fcc37 */
