@@ -1,2 +1,2 @@
 <?php
-header('Location: site/index.html');
+header('Location: site/index.php');
