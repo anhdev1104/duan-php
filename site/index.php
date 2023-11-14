@@ -17,6 +17,8 @@
         <?php
         include '../system/pdo.php';
 
+
+        // hahahahaha
         include './layout/home/header.php';
         include './layout/home/main.php';
         include './layout/home/footer.php';
