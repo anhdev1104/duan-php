@@ -1,0 +1,94 @@
+.contact_main-wrapper {
+    display: flex;
+}
+
+.contact_main_right {
+    padding: 60px;
+    width: 40%;
+}
+
+.contact_header_right::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    margin-top: 20px;
+    background: #747474;
+    margin-bottom: 30px;
+}
+
+.contact_main_right h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.contact {
+    margin-top: 125px;
+}
+
+.contact_map {
+    width: 50%;
+    border-right: 1px solid #ededed;
+}
+
+strong {
+    font-weight: 700;
+    color: #5c5c5c;
+}
+
+.contact_form_name {
+    margin-top: 40px;
+}
+
+.contact_form_name input {
+    width: 100%;
+    border: 1px solid #ededed;
+    padding: 15px;
+}
+
+.contact_address_tel {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.contact_address_tel input {
+    padding: 15px;
+    width: 50%;
+}
+
+.contact_form_content {
+    margin-top: 40px;
+}
+
+.contact_form_content textarea {
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 16px;
+
+}
+
+.contact_protect {
+    font-weight: 500;
+    color: #bababa;
+    line-height: 2rem;
+    margin-top: 10px;
+}
+
+.contact_protect span {
+    color: #2cccff;
+}
+
+.contact_btn {
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.contact_form_reminders form input,
+.contact_form_reminders form textarea {
+    font-family: 'Quicksand', sans-serif;
+    border: 1px solid var(--black-color);
+    outline: none;
+    font-weight: 500;
+}
