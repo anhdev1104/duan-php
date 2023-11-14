@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>
+        MORRA
+    </title>
+    <!--     Fonts and icons     -->                                                                        
+    <link rel="stylesheet" type="text/css"
+        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/app.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/bootsrap.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/grid.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/vote.css">   -->
+
+    <!-- Alertify JS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <script src="assets/js/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Edit blog:title</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST" enctype="multipart/form-data">
+                            <!-- Uploads image -->
+
+                            <div class="row">
+                                <input type="hidden" name="id" value="">
+                                <div class="col-md-12">
+                                    <label for=""><b>Title</b></label>
+                                    <input type="text" id="full-name" required name="title"
+                                        placeholder="Enter Blog Name" value=""
+                                        class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label for=""><b>Slug</b></label>
+                                    <input type="text" id="slug-name" required name="slug" placeholder="Enter slug"
+                                        value="" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label for=""><b>Image description</b></label>
+                                    <input type="file" name="image" class="form-control">
+                                    <label for="">Current Image</label>
+                                    <input type="hidden" name="old_image" value="">
+                                    <img src="img/blog_article2.webp" height="50px" width="50px" alt="">
+                                </div>
+                                <br>
+                                <div class="col-md-12">
+                                    <label class="mb-0"><b>Small Content</b></label>
+                                    <textarea type="text" required="" style="height: 150px" name="small_content"
+                                        placeholder="Enter Small Content"
+                                        class="form-control mb-2">small_content</textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <br>
+                                    <label for=""><b>Content</b></label>
+                                    <textarea name="content" id="myTextarea"
+                                        style="height: 500px; width: 100%">content</textarea>
+                                </div>
+                                <input type="hidden" name="update_blog_btn" value="true">
+                                <div class="col-md-12">
+                                    <br>
+                                    <button type="submit" class="btn btn-primary">Save blog</button>
+                                    <br>
+                                    <a href="blog.html" class="btn btn-primary">go out</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="./assets/js/StringConvertToSlug.js"></script>
+<script>
+tinymce.init({
+    selector: "#myTextarea",
+});
+</script>
