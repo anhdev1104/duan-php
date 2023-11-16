@@ -10,6 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/login.css">
 </head>
@@ -22,7 +23,7 @@
                     <!-- HEADER - FIXED -->
                     <div class="header_top-box header-fixed ">
                         <div class="container header_top-wrap-fixed">
-                            <a href="#" class="header_box-item-fixed header_box-img">
+                            <a href="./index.html" class="header_box-item-fixed header_box-img">
                                 <img src="./img/logo.webp" alt="" class="header_logo header_logo-fixed">
                             </a>
                             <div class="header_box-item-fixed">
@@ -69,7 +70,7 @@
                                         </ul>
                                     </li>
                                     <li class="header_menu-item">
-                                        <a href="./perfume.html" class="header-fixed-link">NƯỚC HOA</a>
+                                        <a href="./product.html" class="header-fixed-link">NƯỚC HOA</a>
                                         <i class="fa-solid fa-angle-down"></i>
                                         <ul class="header_submenu">
                                             <li class="header_submenu-item">
@@ -136,7 +137,7 @@
                                         </ul>
                                     </li>
                                     <li class="header_menu-item">
-                                        <a href="./introduce.html" class="header-fixed-link">GIỚI THIỆU</a>
+                                        <a href="#" class="header-fixed-link">GIỚI THIỆU</a>
                                     </li>
                                     <li class="header_menu-item">
                                         <a href="./blog.html" class="header-fixed-link">BLOG</a>
@@ -148,7 +149,7 @@
                             </div>
                             <div class="header_box-item-fixed">
                                 <div class="header_box-action header_box-action-fixed">
-                                    <a href="#" class="header_action-item">
+                                    <a href="#" class="header_action-item header_action-user">
                                         <i class="fa-regular fa-user"></i>
                                     </a>
                                     <a href="#" class="header_action-item">
@@ -157,11 +158,18 @@
                                     <a href="#" class="header_action-item">
                                         <i class="fa-solid fa-cart-shopping"></i>
                                     </a>
+                                    <!-- responsive tablet - mobile -->
+                                    <div class="navbar">
+                                        <div class="navbar_icon navbar-icon">
+                                            <i class="fa-solid fa-bars"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                         </div>
                     </div>
+                    <!--  -->
                     <p class="header_top-text">FlashSale độc quyền tại Website 21:00 -09:00</p>
                     <div class="header_top-box">
                         <div class="header_top-wrap container">
@@ -171,7 +179,7 @@
                             </a>
                             <div class="header_box-item">
                                 <div class="header_box-action">
-                                    <a href="./log_in.html" class="header_action-item">
+                                    <a href="#" class="header_action-item header_action-user">
                                         <i class="fa-regular fa-user"></i>
                                     </a>
                                     <a href="#" class="header_action-item">
@@ -180,6 +188,12 @@
                                     <a href="#" class="header_action-item">
                                         <i class="fa-solid fa-cart-shopping"></i>
                                     </a>
+                                    <!-- responsive tablet - mobile -->
+                                    <div class="navbar">
+                                        <div class="navbar_icon navbar-icon">
+                                            <i class="fa-solid fa-bars"></i>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="header_box-item--12">
@@ -226,7 +240,7 @@
                                         </ul>
                                     </li>
                                     <li class="header_menu-item">
-                                        <a href="./perfume.html">NƯỚC HOA</a>
+                                        <a href="./product.html">NƯỚC HOA</a>
                                         <i class="fa-solid fa-angle-down"></i>
                                         <ul class="header_submenu">
                                             <li class="header_submenu-item">
@@ -293,21 +307,58 @@
                                         </ul>
                                     </li>
                                     <li class="header_menu-item">
-                                        <a href="./introduce.html">GIỚI THIỆU</a>
+                                        <a href="#">GIỚI THIỆU</a>
                                     </li>
                                     <li class="header_menu-item">
                                         <a href="./blog.html">BLOG</a>
                                     </li>
                                     <li class="header_menu-item">
-                                        <a href="./contact.html">LIÊN HỆ</a>
+                                        <a href="#">LIÊN HỆ</a>
                                     </li>
                                 </ul>
                             </div>
-                        </div>
 
+                        </div>
                     </div>
+
                 </div>
             </section>
+
+            <!-- navbar menu -->
+            <div class="over-lay"></div>
+            <div class="navbar_menu">
+                <div class="navbar_head">
+                    <span class="navbar_head-title">MENU</span>
+                    <span class="navbar_head-close"><i class="fa-solid fa-xmark"></i></span>
+                </div>
+                <ul class="navbar_menu-main">
+                    <li class="navbar_menu-item">
+                        <a href="">ƯU ĐÃI</a>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </li>
+                    <li class="navbar_menu-item">
+                        <a href="./product.html">Nước hoa</a>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </li>
+                    <li class="navbar_menu-item">
+                        <a href="">Sản phẩm khác</a>
+                        <i class="fa-solid fa-caret-down"></i>
+                    </li>
+                    <li class="navbar_menu-item">
+                        <a href="./introduce.html">Giới thiệu</a>
+                    </li>
+                    <li class="navbar_menu-item">
+                        <a href="./blog.html">Blog</a>
+                    </li>
+                    <li class="navbar_menu-item">
+                        <a href="./contact.html">Liên hệ</a>
+                    </li>
+                </ul>
+                <a href="#" class="navbar_login">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Đăng nhập</span>
+                </a>
+            </div>
         </header>
         <main>
             <section class="login_main-wrapper">
