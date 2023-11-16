@@ -21,6 +21,8 @@
     width: 100%;
 }
 
+
+
 .header_banner-img {
     max-width: 100%;
     object-fit: cover;
@@ -807,6 +809,7 @@ footer {
     padding: 5rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
     overflow: hidden;
     align-items: start;
 }
