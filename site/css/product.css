@@ -26,6 +26,9 @@
     padding-bottom: 12px;
     font-size: 1.4rem;
     font-weight: 500;
+}
+
+.prefume_menu_list li:not(:last-child) {
     border-bottom: 1px dashed #ccc;
 }
 

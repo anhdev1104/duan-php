@@ -40,11 +40,8 @@
                     <div class="action_account_custommer">
                         <button class="button_login contact_btn">ĐĂNG KÝ </button>
                     </div>
-                    <a href="./index.html" class="register_come_back">
-                        <i class="fa-solid fa-arrow-left-long">
-
-                        </i>
-                        &emsp;
+                    <a href="./index.php" class="register_come_back">
+                        <i class="fa-solid fa-arrow-left-long"></i>
                         Quay lại trang chủ
                     </a>
 

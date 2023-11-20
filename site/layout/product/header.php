@@ -1,7 +1,7 @@
 <header class="header">
     <section class="header_top">
         <?php
-        include 'nav.php';
+        include './layout/home/nav.php';
         ?>
     </section>
 
@@ -35,7 +35,7 @@
                 <a href="./contact.html">Liên hệ</a>
             </li>
         </ul>
-        <a href="./login.html" class="navbar_login">
+        <a href="./login.php" class="navbar_login">
             <i class="fa-solid fa-user"></i>
             <span>Đăng nhập</span>
         </a>
