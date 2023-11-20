@@ -8,7 +8,7 @@
             </div>
 
         </div>
-        <section class="contact_main-wrapper">
+        <section class="contact_main-wrapper container">
             <div class="contact_map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62709.39832682635!2d106.64200721580141!3d10.785450076999146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f3179d9762b%3A0x143fea215b08dd7a!2zTW9ycmEgTMOqIFbEg24gU-G7uQ!5e0!3m2!1sen!2s!4v1698937678790!5m2!1sen!2s" width="600" height="1050px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>

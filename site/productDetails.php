@@ -16,6 +16,8 @@
 <body>
     <div id="root">
         <?php
+        include '../config/pdo.php';
+
         include './layout/product/header.php';
         include './layout/productDetails/main.php';
         include './layout/home/footer.php';
