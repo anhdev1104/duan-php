@@ -1,3 +1,14 @@
+<?php
+include '../config/product.php';
+
+
+$subquery = "SELECT MIN(category_id) FROM product";
+// Câu truy vấn chính - lấy tất cả sản phẩm có ID bằng với ID nhỏ nhất tìm được từ truy vấn con
+$sql_product = "SELECT * FROM product WHERE product.category_id = ($subquery) GROUP BY id_product ASC LIMIT 4";
+$rows = pdo_query($sql_product);
+
+?>
+
 <main>
     <a href="#sale_product" class="btn_scroll-downs"><i class="fa-solid fa-chevron-down"></i></a>
     <!-- NƯỚC HOA THEO NHÓM HƯƠNG -->
@@ -19,59 +30,22 @@
                 </li>
             </ul>
             <div class="product_list">
-                <div class="product_item">
-                    <?php
-                    $sql = "SELECT * FROM product, image WHERE product.id_product = image.product_id";
-                    $query = mysqli_query($conn, $sql);
-                    $row = mysqli_fetch_array($query);
-                    ?>
-                    <a href="#" class="product_img-box">
-                        <img src="./img/<?= $row['image'] ?>" alt="" class="product_img-1">
-                        <img src="./img/<?= $row['image_hover'] ?>" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title"><?= $row['name_product'] ?></a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">315,000đ</span>
-                        <span class="product_price-old">350,000đ</span>
-                    </p>
-                </div>
-
-                <div class="product_item">
-                    <a href="#" class="product_img-box">
-                        <img src="./img/sp-home-2.webp" alt="" class="product_img-1">
-                        <img src="./img/sp-home-2.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Nước hoa Camel Vanilla 11</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">315,000đ</span>
-                        <span class="product_price-old">350,000đ</span>
-                    </p>
-                </div>
-
-                <div class="product_item">
-                    <a href="#" class="product_img-box">
-                        <img src="./img/sp-home-3.webp" alt="" class="product_img-1">
-                        <img src="./img/sp-home-3.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Nước hoa Lilybell 07</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">351,000đ</span>
-                        <span class="product_price-old">390,000đ</span>
-                    </p>
-                </div>
-
-                <div class="product_item">
-                    <a href="#" class="product_img-box">
-                        <img src="./img/sp-home-4.webp" alt="" class="product_img-1">
-                        <img src="./img/sp-home-4.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Nước hoa Osmanthus 16</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">351,000đ</span>
-                        <span class="product_price-old">390,000đ</span>
-                    </p>
-                </div>
-
+                <?php
+                foreach ($rows as $row) {
+                    extract($row);
+                ?>
+                    <div class="product_item">
+                        <a href="#" class="product_img-box">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="product_img-1">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="product_img-2">
+                        </a>
+                        <a href="#" class="product_title"><?= $name_product ?></a>
+                        <p class="product_price-wrap">
+                            <span class="product_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ'; ?></span>
+                            <span class="product_price-old"><?= str_replace(',', '.', number_format($origin_price)) . 'đ'; ?></span>
+                        </p>
+                    </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -116,53 +90,24 @@
         <div class="container">
             <h1 class="section_heading">ƯU ĐÃI</h1>
             <div class="product_list">
-                <div class="product_item">
-                    <a href="#" class="product_img-box sale30-important">
-                        <img src="./img/sale-1.webp" alt="" class="product_img-1">
-                        <img src="./img/sale-1.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Nến thơm Lialily</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">126,000đ</span>
-                        <span class="product_price-old">234,000đ</span>
-                    </p>
-                </div>
-
-                <div class="product_item">
-                    <a href="#" class="product_img-box">
-                        <img src="./img/sale-2.webp" alt="" class="product_img-1">
-                        <img src="./img/sale-2.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Sữa tắm BST Lumin - Harmony Of The Sea 300ml</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">234,000đ</span>
-                        <span class="product_price-old">260,000đ</span>
-                    </p>
-                </div>
-
-                <div class="product_item">
-                    <a href="#" class="product_img-box">
-                        <img src="./img/sale-3.webp" alt="" class="product_img-1">
-                        <img src="./img/sale-3.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Sữa tắm BST Lumin - Rose Quince 300ml</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">234,000đ</span>
-                        <span class="product_price-old">260,000đ</span>
-                    </p>
-                </div>
-
-                <div class="product_item">
-                    <a href="#" class="product_img-box">
-                        <img src="./img/sale-4.webp" alt="" class="product_img-1">
-                        <img src="./img/sale-4.2.webp" alt="" class="product_img-2">
-                    </a>
-                    <a href="#" class="product_title">Nước hoa Osmanthus 16</a>
-                    <p class="product_price-wrap">
-                        <span class="product_price-origin">504,000đ</span>
-                        <span class="product_price-old">560,000đ</span>
-                    </p>
-                </div>
+                <?php
+                $sql = random_product();
+                $rows_random = pdo_query($sql);
+                foreach ($rows_random as $row_random) {
+                    extract($row_random);
+                ?>
+                    <div class="product_item">
+                        <a href="#" class="product_img-box sale30-important">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="product_img-1">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="product_img-2">
+                        </a>
+                        <a href="#" class="product_title"><?= $name_product ?></a>
+                        <p class="product_price-wrap">
+                            <span class="product_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ'; ?></span>
+                            <span class="product_price-old"><?= str_replace(',', '.', number_format($origin_price)) . 'đ'; ?></span>
+                        </p>
+                    </div>
+                <?php } ?>
             </div>
 
             <div class="collection_view-more">

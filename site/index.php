@@ -15,10 +15,8 @@
 <body>
     <div id="root">
         <?php
-        include '../system/pdo.php';
+        include '../config/pdo.php';
 
-
-        // hahahahaha
         include './layout/home/header.php';
         include './layout/home/main.php';
         include './layout/home/footer.php';
