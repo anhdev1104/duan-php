@@ -1,6 +1,6 @@
-<?php 
-    $sql_get_customers = "SELECT * FROM user";
-    $sql_customers_query = pdo_query($sql_get_customers);
+<?php
+$sql_get_customers = "SELECT * FROM customer";
+$sql_customers_query = pdo_query($sql_get_customers);
 ?>
 
 
@@ -24,13 +24,13 @@
                 extract($row);
             ?>
                 <tr>
-                    <th scope="row"><?= $id_user; ?></th>
+                    <th scope="row"><?= $id_customer; ?></th>
                     <td><?= $fullname; ?></td>
                     <td><?= $email; ?></td>
-                    <td><?= '0' . $phonenumber; ?></td>
+                    <td><?= '0' . $phone_number; ?></td>
                     <td style="width: 250px;"><?= $address; ?></td>
                     <td>
-                        <a href="index.php?action=customers&query=xemcustomers&iduser=<?= $id_user ?>" class="nav-link btn btn-danger mx-2" onclick="return confirm('Bạn chắc chắn muốn xoá ?')">DELETE</a>
+                        <a href="index.php?action=customers&query=xemcustomers&iduser=<?= $id_customer ?>" class="nav-link btn btn-danger mx-2" onclick="return confirm('Bạn chắc chắn muốn xoá ?')">DELETE</a>
                     </td>
                 </tr>
             <?php } ?>

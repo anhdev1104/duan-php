@@ -4,9 +4,9 @@ function select_product()
     return "SELECT * FROM product, category WHERE product.category_id = category.id_category ORDER BY id_product DESC";
 }
 
-function random_product()
+function random_product($limitQuantity)
 {
-    return "SELECT * FROM product ORDER BY RAND() LIMIT 4";
+    return "SELECT * FROM product ORDER BY RAND() LIMIT $limitQuantity";
 }
 
 function insert_product($name_product, $image_product, $image_product2, $price_product, $price2_product, $quantity_product, $desc_product, $status_product, $category_product)

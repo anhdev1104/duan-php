@@ -13,12 +13,14 @@
     <link rel="stylesheet" href="./css/responsive.css">
     <link rel="stylesheet" href="./css/introduce.css">
     <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/productDetails.css">
 </head>
 
 <body>
     <div id="root">
         <?php
         include '../config/pdo.php';
+        include '../config/product.php';
         include './layout/product/header.php';
         include './layout/product/main.php';
         include './layout/home/footer.php';
