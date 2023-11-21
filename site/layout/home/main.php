@@ -35,11 +35,11 @@ $rows = pdo_query($sql_product);
                     extract($row);
                 ?>
                     <div class="product_item">
-                        <a href="#" class="product_img-box">
+                        <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="product_img-box">
                             <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="product_img-1">
                             <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="product_img-2">
                         </a>
-                        <a href="#" class="product_title"><?= $name_product ?></a>
+                        <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="product_title"><?= $name_product ?></a>
                         <p class="product_price-wrap">
                             <span class="product_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ'; ?></span>
                             <span class="product_price-old"><?= str_replace(',', '.', number_format($origin_price)) . 'đ'; ?></span>
@@ -91,17 +91,18 @@ $rows = pdo_query($sql_product);
             <h1 class="section_heading">ƯU ĐÃI</h1>
             <div class="product_list">
                 <?php
-                $sql = random_product();
+                $limit = 4;
+                $sql = random_product($limit);
                 $rows_random = pdo_query($sql);
                 foreach ($rows_random as $row_random) {
                     extract($row_random);
                 ?>
                     <div class="product_item">
-                        <a href="#" class="product_img-box sale30-important">
+                        <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="product_img-box sale30-important">
                             <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="product_img-1">
                             <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="product_img-2">
                         </a>
-                        <a href="#" class="product_title"><?= $name_product ?></a>
+                        <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="product_title"><?= $name_product ?></a>
                         <p class="product_price-wrap">
                             <span class="product_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ'; ?></span>
                             <span class="product_price-old"><?= str_replace(',', '.', number_format($origin_price)) . 'đ'; ?></span>
@@ -111,7 +112,7 @@ $rows = pdo_query($sql_product);
             </div>
 
             <div class="collection_view-more">
-                <a href="#" class="button collection_btn">XEM THÊM</a>
+                <a href="product.php?menu=sanpham&id=1" class="button collection_btn">XEM THÊM</a>
             </div>
         </div>
     </section>
