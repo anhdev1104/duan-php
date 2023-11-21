@@ -37,7 +37,7 @@ while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
 
             // Set Options
             const options = {
-                title: 'Biểu đồ thống kê số lượng sản phẩm trong năm 2023',
+                title: 'Biểu đồ thống kê số lượng sản phẩm trong từng danh mục',
                 is3D: true
             };
 

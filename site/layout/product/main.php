@@ -1,115 +1,66 @@
+<?php
+// GET category_name 
+$sql_category = "SELECT * FROM category WHERE category.id_category = '$_GET[id]' LIMIT 1";
+$query_category = pdo_query($sql_category);
+?>
+
 <main>
     <div class="perfume">
         <div class="blog_header">
             <div class="container">
                 <div class="blog_header_test">
-                    <span><a href="./index.php">Trang chủ</a></span> <span>/</span> <a href="#">Danh mục</a>
-                    <span>/</span> <span>Về Morra</span>
+                    <span><a href="./index.php">Trang chủ</a></span>
+                    <span>/</span>
+                    <?php
+                    foreach ($query_category as $row_title) {
+                    ?>
+                        <a href="#"><?= $row_title['category_name']; ?></a>
+                    <?php } ?>
+                    <?php
+                    if (isset($_GET['menu']) == 'chitietsanpham') {
+                        $sql_details = "SELECT * FROM product, category WHERE product.category_id=category.id_category AND product.id_product='$_GET[id]' ORDER BY id_product LIMIT 1";
+                        $query_details = pdo_query($sql_details);
+                        foreach ($query_details as $row_category) {
+                            extract($row_category);
+                            echo '<a href="#">' . $category_name . '</a>';
+                            echo '<span> / </span>';
+                            echo '<a href="#">' . $name_product . '</a>';
+                        }
+                    }
+                    ?>
                 </div>
             </div>
         </div>
         <div class="container">
             <section class="introduce_main-wrap">
                 <div class="prefume_product">
-                    <div class="prefume_menu_list">
-                        <ul>
-                            <li><a href="">Amber (hổ phách)</a></li>
-                            <li><a href="">Chypre (hương đảo Chypre)</a></li>
-                            <li><a href="">Floral (hương hoa cỏ)</a></li>
-                            <li><a href="">Fresh (hương tươi mát)</a></li>
-                            <li><a href="">Fruity (hương trái cây)</a></li>
-                            <li><a href="">Musk (xạ hương)</a></li>
-                            <li><a href="">Leather (hương da thuộc)</a></li>
-                            <li><a href="">Woody (hương gỗ)</a></li>
-                            <li><a href="">Oriental (hương Phương Đông)</a></li>
-                            <li><a href="">Fougere (hương rêu phong)</a></li>
-                        </ul>
-                        <!-- <div class="prefum_layered">
-                            <div>
-                                <span class="perfumr_layered_subtitle">
-                                    GIÁ SẢN PHẨM
-                                </span>
-                                <span class="icon-control">
-                                    <i class="fa fa-minus"></i>
-                                </span>
-                            </div>
-                            <div class="perfume_layered_content">
-                                <ul>
-                                    <li>
-                                        <input type="checkbox" name="" id="">
-                                        <label for="">
-                                            <span>Dưới</span> 500,000₫
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="" id="">
-                                        <label for="">
-                                            500,000₫ - 1,000,000₫
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="" id="">
-                                        <label for="">
-                                            1,000,000₫ - 1,500,000₫
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="" id="">
-                                        <label for="">
-                                            1,500,000₫ - 3,000,000₫
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <input type="checkbox" name="" id="">
-                                        <label for="">
-                                            <span>Trên</span> 3,000,000₫
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
+                    <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-search'])) {
+                        $item = $_POST['search-item'];
+                    } else {
+                        $item = '';
+                    }
 
-                        </div> -->
-                    </div>
-                    <div class="product_list_featured">
-                        <h1>Nước hoa</h1>
-                        <div class="product_list_perfume">
-                            <div class="product_item_perfume">
-                                <a href="#" class="product_img-box">
-                                    <img src="./img/sp-home-1.webp" alt="" class="product_img-1">
-                                    <img src="./img/sp-home-1.2.webp" alt="" class="product_img-2">
-                                </a>
-                                <a href="#" class="product_title">Nước hoa Begamot Vetiver 15</a>
-                                <p class="product_price-wrap">
-                                    <span class="product_price-origin">315,000đ</span>
-                                    <span class="product_price-old">350,000đ</span>
-                                </p>
-                            </div>
+                    if ($item) {
+                        include "main/viewsearch.php";
+                    } else {
+                        if (isset($_GET['menu'])) {
+                            $temp = $_GET['menu'];
+                        } else {
+                            $temp = '';
+                        }
 
-                            <div class="product_item_perfume">
-                                <a href="#" class="product_img-box">
-                                    <img src="./img/sp-home-2.webp" alt="" class="product_img-1">
-                                    <img src="./img/sp-home-2.2.webp" alt="" class="product_img-2">
-                                </a>
-                                <a href="#" class="product_title">Nước hoa Camel Vanilla 11</a>
-                                <p class="product_price-wrap">
-                                    <span class="product_price-origin">315,000đ</span>
-                                    <span class="product_price-old">350,000đ</span>
-                                </p>
-                            </div>
+                        if ($temp != 'chitietsanpham') {
+                            include('navbar.php');
+                        }
 
-                            <div class="product_item_perfume">
-                                <a href="#" class="product_img-box">
-                                    <img src="./img/sp-home-3.webp" alt="" class="product_img-1">
-                                    <img src="./img/sp-home-3.2.webp" alt="" class="product_img-2">
-                                </a>
-                                <a href="#" class="product_title">Nước hoa Lilybell 07</a>
-                                <p class="product_price-wrap">
-                                    <span class="product_price-origin">351,000đ</span>
-                                    <span class="product_price-old">390,000đ</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                        if ($temp == 'chitietsanpham') {
+                            include('main/productdetail.php');
+                        } else {
+                            include('main/index.php');
+                        }
+                    }
+                    ?>
                 </div>
             </section>
         </div>
