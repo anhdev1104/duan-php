@@ -21,18 +21,22 @@ foreach ($query_details as $row) {
         <section class="product_details-main">
             <div class="product_details-wrap">
                 <div class="product_details-left">
+                    <ul class="details-list-img">
+                        <li class="details-item-img active-img">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="">
+                        </li>
+                        <li class="details-item-img ">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="">
+                        </li>
+                    </ul>
                     <div class="details_left-main">
                         <div class="details_left-box">
-                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="details_left-img">
-                        </div>
-                        <div class="details_left-box">
-                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="details_left-img">
+                            <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="details_left-img" id="srcImage">
                         </div>
                     </div>
                 </div>
                 <div class="product_details-right">
                     <h1 class="product_details-title"><?= $name_product; ?></h1>
-                    <!-- <span>SKU: NHOA015010</span> -->
                     <div class="details_sale-wrap">
                         <div class="details_sale">-10%</div>
                         <span class="details_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ' ?></span>

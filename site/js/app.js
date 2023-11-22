@@ -33,20 +33,27 @@ window.addEventListener('load', () => {
     const btnSizes = document.querySelectorAll('.details_size');
     btnSizes.forEach((btnSize) => {
         btnSize.addEventListener('click', function () {
-            [...btnSizes].forEach((item) =>
-                item.classList.remove('isActiveSize')
-            );
+            [...btnSizes].forEach((item) => item.classList.remove('isActiveSize'));
             this.classList.toggle('isActiveSize');
         });
     });
+
+    // active src
+    const images = document.querySelectorAll('.details-item-img');
+    const srcImage = document.querySelector('#srcImage');
+    images.forEach((image) =>
+        image.addEventListener('click', function () {
+            [...images].forEach((image) => image.classList.remove('active-img'));
+            this.classList.toggle('active-img');
+            srcImage.src = this.querySelector('img').src;
+        })
+    );
 
     // scroll product related
     const btnPrev = document.querySelector('.product_related-prev');
     const btnNext = document.querySelector('.product_related-next');
     const listRelated = document.querySelector('.product_related-main');
-    const productItem = document.querySelector(
-        '.product_related-main .product_item'
-    );
+    const productItem = document.querySelector('.product_related-main .product_item');
     const productItemWidth = productItem.offsetWidth;
 
     let debounceTimeout;
@@ -106,97 +113,85 @@ window.addEventListener('load', () => {
 });
 
 /* js recove password */
-document
-    .getElementById('quenMatKhauLink')
-    .addEventListener('click', function (event) {
-        event.preventDefault(); // Ngăn chặn liên kết mặc định chuyển hướng
+document.getElementById('quenMatKhauLink').addEventListener('click', function (event) {
+    event.preventDefault(); // Ngăn chặn liên kết mặc định chuyển hướng
 
-        // Ẩn phần đăng nhập
-        var loginSection = document.getElementById('loginSection');
-        loginSection.style.display = 'none';
+    // Ẩn phần đăng nhập
+    var loginSection = document.getElementById('loginSection');
+    loginSection.style.display = 'none';
 
-        // Hiển thị ô nhập email
-        var emailInputDiv = document.getElementById('emailInputDiv');
-        emailInputDiv.style.display = 'block';
+    // Hiển thị ô nhập email
+    var emailInputDiv = document.getElementById('emailInputDiv');
+    emailInputDiv.style.display = 'block';
 
-        // Hiển thị nút "Hủy"
-        var huyButton = document.getElementById('huyButton');
-        huyButton.style.display = 'block';
+    // Hiển thị nút "Hủy"
+    var huyButton = document.getElementById('huyButton');
+    huyButton.style.display = 'block';
 
-        // Ẩn liên kết "Quên mật khẩu"
-        this.style.display = 'none';
-    });
+    // Ẩn liên kết "Quên mật khẩu"
+    this.style.display = 'none';
+});
 
-document
-    .getElementById('huyButton')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
+document.getElementById('huyButton').addEventListener('click', function (event) {
+    event.preventDefault();
 
-        // Ẩn ô nhập email
-        var emailInputDiv = document.getElementById('emailInputDiv');
-        emailInputDiv.style.display = 'none';
+    // Ẩn ô nhập email
+    var emailInputDiv = document.getElementById('emailInputDiv');
+    emailInputDiv.style.display = 'none';
 
-        // Ẩn ô nhập mật khẩu
+    // Ẩn ô nhập mật khẩu
+    var passwordInputDiv = document.getElementById('passwordInputDiv');
+    passwordInputDiv.style.display = 'none';
+
+    // Ẩn nút "Hủy"
+    this.style.display = 'none';
+
+    // Hiển thị liên kết "Quên mật khẩu" lại
+    var loginSection = document.getElementById('loginSection');
+    loginSection.style.display = 'block';
+    var quenMatKhauLink = document.getElementById('quenMatKhauLink');
+    quenMatKhauLink.style.display = 'block';
+});
+
+document.getElementById('emailSubmitButton').addEventListener('click', function (event) {
+    event.preventDefault();
+
+    // Kiểm tra xem email đã được nhập
+    var email = document.getElementById('email').value;
+    if (email.trim() !== '') {
+        // Hiển thị ô nhập mật khẩu
         var passwordInputDiv = document.getElementById('passwordInputDiv');
-        passwordInputDiv.style.display = 'none';
+        passwordInputDiv.style.display = 'block';
+    } else {
+        alert('Vui lòng nhập địa chỉ email trước.');
+    }
+    emailInputDiv.style.display = 'none';
+});
 
-        // Ẩn nút "Hủy"
-        this.style.display = 'none';
+document.getElementById('guiYeuCauButton').addEventListener('click', function (event) {
+    event.preventDefault();
 
-        // Hiển thị liên kết "Quên mật khẩu" lại
-        var loginSection = document.getElementById('loginSection');
-        loginSection.style.display = 'block';
-        var quenMatKhauLink = document.getElementById('quenMatKhauLink');
-        quenMatKhauLink.style.display = 'block';
-    });
+    // Lấy giá trị email và mật khẩu
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('password').value;
 
-document
-    .getElementById('emailSubmitButton')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
+    if (email.trim() === '' || password.trim() === '') {
+        alert('Vui lòng nhập đầy đủ email và mật khẩu trước khi gửi yêu cầu.');
+    } else {
+        // Thực hiện xử lý gửi yêu cầu ở đây
+        alert('Yêu cầu đã được gửi đi.');
+    }
+});
+document.getElementById('emailSubmitButton').addEventListener('click', function (event) {
+    event.preventDefault();
 
-        // Kiểm tra xem email đã được nhập
-        var email = document.getElementById('email').value;
-        if (email.trim() !== '') {
-            // Hiển thị ô nhập mật khẩu
-            var passwordInputDiv = document.getElementById('passwordInputDiv');
-            passwordInputDiv.style.display = 'block';
-        } else {
-            alert('Vui lòng nhập địa chỉ email trước.');
-        }
-        emailInputDiv.style.display = 'none';
-    });
-
-document
-    .getElementById('guiYeuCauButton')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
-
-        // Lấy giá trị email và mật khẩu
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
-
-        if (email.trim() === '' || password.trim() === '') {
-            alert(
-                'Vui lòng nhập đầy đủ email và mật khẩu trước khi gửi yêu cầu.'
-            );
-        } else {
-            // Thực hiện xử lý gửi yêu cầu ở đây
-            alert('Yêu cầu đã được gửi đi.');
-        }
-    });
-document
-    .getElementById('emailSubmitButton')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
-
-        // Kiểm tra xem email đã được nhập
-        var email = document.getElementById('email').value;
-        if (email.trim() !== '') {
-            // Hiển thị ô nhập mật khẩu
-            var passwordInputDiv = document.getElementById('passwordInputDiv');
-            passwordInputDiv.style.display = 'block';
-        } else {
-            alert('Vui lòng nhập địa chỉ email trước.');
-        }
-    });
+    // Kiểm tra xem email đã được nhập
+    var email = document.getElementById('email').value;
+    if (email.trim() !== '') {
+        // Hiển thị ô nhập mật khẩu
+        var passwordInputDiv = document.getElementById('passwordInputDiv');
+        passwordInputDiv.style.display = 'block';
+    } else {
+        alert('Vui lòng nhập địa chỉ email trước.');
+    }
+});
