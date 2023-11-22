@@ -76,7 +76,7 @@ foreach ($query_details as $row) {
                 </div>
                 <div class="product_related-main">
                     <?php
-                    $limit = 10;
+                    $limit = 9;
                     $sql = random_product($limit);
                     $random_product = pdo_query($sql);
                     foreach ($random_product as $row) {
