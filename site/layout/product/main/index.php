@@ -42,7 +42,5 @@ $query_product = pdo_query($sql_product);
                 </div>
         <?php }
         } ?>
-
-
     </div>
 </div>
