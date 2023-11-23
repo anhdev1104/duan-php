@@ -1,3 +1,20 @@
+// slider
+window.addEventListener('load', () => {
+    const sliderMain = document.querySelector('.slider_main');
+    const sliderItems = document.querySelectorAll('.header_banner-block');
+    const sliderItemWidth = sliderItems[0].offsetWidth;
+    const sliderLenght = sliderItems.length;
+    let index = 0;
+
+    // Tự động chuyển slide sau mỗi 3 giây
+    function autoSlide() {
+        index = (index + 1) % sliderLenght;
+        sliderMain.style.transform = `translateX(-${index * sliderItemWidth}px)`;
+    }
+
+    setInterval(autoSlide, 3000);
+});
+
 // scroll header
 function debounceFn(func, wait, immediate) {
     let timeout;
