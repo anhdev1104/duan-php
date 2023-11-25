@@ -44,41 +44,12 @@ window.addEventListener(
         }
     }, 50)
 );
-// scroll header
-function debounceFn(func, wait, immediate) {
-    let timeout;
-    return function() {
-        let context = this,
-            args = arguments;
-        let later = function() {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        let callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-}
-
-window.addEventListener(
-    'scroll',
-    debounceFn(function() {
-        const headerFixed = document.querySelector('.header-fixed');
-        const scrollY = window.scrollY;
-        if (scrollY >= 300) {
-            headerFixed && headerFixed.classList.add('is-fixed');
-        } else {
-            headerFixed && headerFixed.classList.remove('is-fixed');
-        }
-    }, 50)
-);
 
 window.addEventListener('load', () => {
     // btn size product details
     const btnSizes = document.querySelectorAll('.details_size');
     btnSizes.forEach((btnSize) => {
-        btnSize.addEventListener('click', function () {
+        btnSize.addEventListener('click', function() {
             [...btnSizes].forEach((item) => item.classList.remove('isActiveSize'));
             this.classList.toggle('isActiveSize');
         });
@@ -88,7 +59,7 @@ window.addEventListener('load', () => {
     const images = document.querySelectorAll('.details-item-img');
     const srcImage = document.querySelector('#srcImage');
     images.forEach((image) =>
-        image.addEventListener('click', function () {
+        image.addEventListener('click', function() {
             [...images].forEach((image) => image.classList.remove('active-img'));
             this.classList.toggle('active-img');
             srcImage.src = this.querySelector('img').src;
@@ -103,6 +74,7 @@ window.addEventListener('load', () => {
     const productItemWidth = productItem.offsetWidth;
 
     let debounceTimeout;
+
     function handleNextClick() {
         if (debounceTimeout) {
             clearTimeout(debounceTimeout);
@@ -125,7 +97,7 @@ window.addEventListener('load', () => {
     }
     btnPrev.addEventListener('click', handlePrevClick);
 
-    listRelated.addEventListener('wheel', function (e) {
+    listRelated.addEventListener('wheel', function(e) {
         console.log(this);
         e.preventDefault();
         const delta = e.deltaY * 3.3;
@@ -159,23 +131,12 @@ window.addEventListener('load', () => {
 });
 
 /* js recove password */
-document.getElementById('quenMatKhauLink').addEventListener('click', function (event) {
+document.getElementById('quenMatKhauLink').addEventListener('click', function(event) {
     event.preventDefault(); // Ngăn chặn liên kết mặc định chuyển hướng
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-document.getElementById("quenMatKhauLink").addEventListener("click", function(event) {
-    event.preventDefault(); // Ngăn chặn liên kết mặc định chuyển hướng
-=======
-        // Ẩn phần đăng nhập
-        var loginSection = document.getElementById('loginSection');
-        loginSection.style.display = 'none';
->>>>>>> 3cbd0f8cfb22a540951e59c81d42ef0b5ae8ff14
-=======
     // Ẩn phần đăng nhập
     var loginSection = document.getElementById('loginSection');
     loginSection.style.display = 'none';
->>>>>>> 3fc5506c7d2b728d33133997437005b7de1fd2c6
 
     // Hiển thị ô nhập email
     var emailInputDiv = document.getElementById('emailInputDiv');
@@ -189,23 +150,12 @@ document.getElementById("quenMatKhauLink").addEventListener("click", function(ev
     this.style.display = 'none';
 });
 
-document.getElementById('huyButton').addEventListener('click', function (event) {
+document.getElementById('huyButton').addEventListener('click', function(event) {
     event.preventDefault();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-document.getElementById("huyButton").addEventListener("click", function(event) {
-    event.preventDefault();
-=======
-        // Ẩn ô nhập email
-        var emailInputDiv = document.getElementById('emailInputDiv');
-        emailInputDiv.style.display = 'none';
->>>>>>> 3cbd0f8cfb22a540951e59c81d42ef0b5ae8ff14
-=======
     // Ẩn ô nhập email
     var emailInputDiv = document.getElementById('emailInputDiv');
     emailInputDiv.style.display = 'none';
->>>>>>> 3fc5506c7d2b728d33133997437005b7de1fd2c6
 
     // Ẩn ô nhập mật khẩu
     var passwordInputDiv = document.getElementById('passwordInputDiv');
@@ -221,7 +171,7 @@ document.getElementById("huyButton").addEventListener("click", function(event) {
     quenMatKhauLink.style.display = 'block';
 });
 
-document.getElementById('emailSubmitButton').addEventListener('click', function (event) {
+document.getElementById('emailSubmitButton').addEventListener('click', function(event) {
     event.preventDefault();
 
     // Kiểm tra xem email đã được nhập
@@ -236,7 +186,7 @@ document.getElementById('emailSubmitButton').addEventListener('click', function 
     emailInputDiv.style.display = 'none';
 });
 
-document.getElementById('guiYeuCauButton').addEventListener('click', function (event) {
+document.getElementById('guiYeuCauButton').addEventListener('click', function(event) {
     event.preventDefault();
 
     // Lấy giá trị email và mật khẩu
@@ -250,89 +200,9 @@ document.getElementById('guiYeuCauButton').addEventListener('click', function (e
         alert('Yêu cầu đã được gửi đi.');
     }
 });
-document.getElementById('emailSubmitButton').addEventListener('click', function (event) {
+document.getElementById('emailSubmitButton').addEventListener('click', function(event) {
     event.preventDefault();
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-document.getElementById("emailSubmitButton").addEventListener("click", function(event) {
-    event.preventDefault();
-=======
-        // Kiểm tra xem email đã được nhập
-        var email = document.getElementById('email').value;
-        if (email.trim() !== '') {
-            // Hiển thị ô nhập mật khẩu
-            var passwordInputDiv = document.getElementById('passwordInputDiv');
-            passwordInputDiv.style.display = 'block';
-        } else {
-            alert('Vui lòng nhập địa chỉ email trước.');
-        }
-        emailInputDiv.style.display = 'none';
-    });
->>>>>>> 3cbd0f8cfb22a540951e59c81d42ef0b5ae8ff14
-
-document
-    .getElementById('guiYeuCauButton')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
-
-<<<<<<< HEAD
-document.getElementById("guiYeuCauButton").addEventListener("click", function(event) {
-    event.preventDefault();
-=======
-        // Lấy giá trị email và mật khẩu
-        var email = document.getElementById('email').value;
-        var password = document.getElementById('password').value;
->>>>>>> 3cbd0f8cfb22a540951e59c81d42ef0b5ae8ff14
-
-        if (email.trim() === '' || password.trim() === '') {
-            alert(
-                'Vui lòng nhập đầy đủ email và mật khẩu trước khi gửi yêu cầu.'
-            );
-        } else {
-            // Thực hiện xử lý gửi yêu cầu ở đây
-            alert('Yêu cầu đã được gửi đi.');
-        }
-    });
-document
-    .getElementById('emailSubmitButton')
-    .addEventListener('click', function (event) {
-        event.preventDefault();
-
-<<<<<<< HEAD
-    if (email.trim() === "" || password.trim() === "") {
-        alert("Vui lòng nhập đầy đủ email và mật khẩu trước khi gửi yêu cầu.");
-    } else {
-        // Thực hiện xử lý gửi yêu cầu ở đây
-        alert("Yêu cầu đã được gửi đi.");
-    }
-});
-document.getElementById("emailSubmitButton").addEventListener("click", function(event) {
-    event.preventDefault();
-
-    // Kiểm tra xem email đã được nhập
-    var email = document.getElementById("email").value;
-    if (email.trim() !== "") {
-        // Hiển thị ô nhập mật khẩu
-        var passwordInputDiv = document.getElementById("passwordInputDiv");
-        passwordInputDiv.style.display = "block";
-    } else {
-        alert("Vui lòng nhập địa chỉ email trước.");
-    }
-});
-=======
-        // Kiểm tra xem email đã được nhập
-        var email = document.getElementById('email').value;
-        if (email.trim() !== '') {
-            // Hiển thị ô nhập mật khẩu
-            var passwordInputDiv = document.getElementById('passwordInputDiv');
-            passwordInputDiv.style.display = 'block';
-        } else {
-            alert('Vui lòng nhập địa chỉ email trước.');
-        }
-    });
->>>>>>> 3cbd0f8cfb22a540951e59c81d42ef0b5ae8ff14
-=======
     // Kiểm tra xem email đã được nhập
     var email = document.getElementById('email').value;
     if (email.trim() !== '') {
@@ -343,4 +213,3 @@ document.getElementById("emailSubmitButton").addEventListener("click", function(
         alert('Vui lòng nhập địa chỉ email trước.');
     }
 });
->>>>>>> 3fc5506c7d2b728d33133997437005b7de1fd2c6
