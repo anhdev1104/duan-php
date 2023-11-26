@@ -1,6 +1,25 @@
+.mt-login {
+    margin-top: 150px;
+}
+
+.form-group.invalid input {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    padding: 4px 0 0 20px;
+    display: block;
+}
+
 .login_main-wrapper {
     display: flex;
-    margin-top: 140px;
+    /* margin-top: 140px; */
 }
 
 .login_header::after {
@@ -33,13 +52,13 @@
 }
 
 .login_main_right {
-    padding: 100px 15px 100px 50px;
+    padding: 80px 15px 50px 50px;
     width: 40%;
 }
 
 .login_form_name input {
     width: 100%;
-    padding: 20px;
+    padding: 18px 20px;
     border: 0;
     outline: none;
     background-color: #ededed;
@@ -59,7 +78,7 @@
 }
 
 .login_form_name {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
 }
 
 .action_account_custommer {
