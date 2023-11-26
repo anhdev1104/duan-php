@@ -1,12 +1,10 @@
 <?php
 include '../config/product.php';
 
-
 $subquery = "SELECT MIN(category_id) FROM product";
 // Câu truy vấn chính - lấy tất cả sản phẩm có ID bằng với ID nhỏ nhất tìm được từ truy vấn con
 $sql_product = "SELECT * FROM product WHERE product.category_id = ($subquery) GROUP BY id_product ASC LIMIT 4";
 $rows = pdo_query($sql_product);
-
 ?>
 
 <main>
