@@ -5,8 +5,21 @@
 
     <!-- slide -->
     <section class="header_banner">
-        <div class="header_banner-block">
-            <img src="./img/slide1.webp" alt="" class="header_banner-img">
+        <div class="slider_wrap">
+            <div class="slider_main">
+                <div class="header_banner-block">
+                    <img src="./img/slide1.webp" alt="" class="header_banner-img">
+                </div>
+                <div class="header_banner-block">
+                    <img src="./img/slide4.webp" alt="" class="header_banner-img">
+                </div>
+                <div class="header_banner-block">
+                    <img src="./img/slide3.webp" alt="" class="header_banner-img">
+                </div>
+                <div class="header_banner-block">
+                    <img src="./img/slide2.webp" alt="" class="header_banner-img">
+                </div>
+            </div>
         </div>
     </section>
 

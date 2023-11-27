@@ -88,52 +88,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="blog_directory">
-                        <div class="blog_article">
-                            <h3>DANH MỤC BLOG 2
-                            </h3>
-                            <ul class="menulist_links">
-                                <li class="blog_content_submenu">
-                                    <a href="" title="ƯU ĐÃI">
-                                        <span>ƯU ĐÃI</span>
-                                        <span class="icon_plus_submenu">
-                                            +
-                                        </span>
-                                    </a>
-                                    <ul class="blog_submenu_item">
-                                        <li>Dịch vụ dành riêng Thành viên</li>
-                                        <li>November Special</li>
-                                        <li>Your Feedback - Our Motivation</li>
-                                    </ul>
-                                </li>
-                                <li class="blog_content_submenu"><a href="" title="ƯU ĐÃI">
-                                        <span>Nước hoa</span>
-                                        <span class="icon_plus_submenu">+</span>
-                                    </a>
-                                </li>
-                                <li class="blog_content_submenu"><a href="" title="ƯU ĐÃI">
-                                        <span>Sản phẩm khác</span>
-                                        <span class="icon_plus_submenu">+</span>
-                                    </a>
-                                </li>
-                                <li class="blog_content_submenu"><a href="" title="ƯU ĐÃI">
-                                        <span>Giới thiệu</span>
-                                        <span class="icon_plus_submenu">+</span>
-                                    </a>
-                                </li>
-                                <li class="blog_content_submenu">
-                                    <a href="" title="ƯU ĐÃI">
-                                        <span>Blog</span>
-                                    </a>
-                                </li>
-                                <li class="blog_content_submenu">
-                                    <a href="" title="ƯU ĐÃI">
-                                        <span>Liên hệ</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="blog_content">
                     <h1>Blog</h1>

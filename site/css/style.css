@@ -17,16 +17,37 @@
     text-align: center;
 }
 
-.header_banner-block {
+.header_banner {
+    position: relative;
+    top: 0;
     width: 100%;
 }
 
+.slider_wrap {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
+.slider_main {
+    transition: transform 0.25s linear;
+    display: flex;
+    position: relative;
+}
+
+.header_banner-block {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex: 1 0 100%;
+    user-select: none;
+}
 
 .header_banner-img {
     max-width: 100%;
     object-fit: cover;
     object-position: center;
+    display: block;
 }
 
 .header_top-box {
@@ -36,6 +57,7 @@
     background-color: transparent;
     color: #000;
     transition: all ease-in-out .3s;
+    z-index: 2;
 }
 
 .header_top-box:hover {
@@ -312,6 +334,7 @@
 .header-fixed {
     position: fixed;
     background-color: #fff;
+    border-bottom: 1px solid #dbdbdb;
     top: -100px;
     left: 0;
     right: 0;
@@ -403,10 +426,13 @@ main {
 .product_list_perfume {
     margin-top: 30px;
     display: flex;
-    justify-content: space-between;
     margin-bottom: 20px;
-    gap: 20px;
+    flex-wrap: wrap;
+    margin-right: -10px;
+    margin-left: -10px;
 }
+
+
 
 .product_item {
     width: 25%;
