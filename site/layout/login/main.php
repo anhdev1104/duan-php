@@ -24,7 +24,7 @@
                             <div>
                                 <a href="#" id="quenMatKhauLink">Quên mật khẩu?</a>
                                 hoặc
-                                <a href="./register.html">Đăng ký</a>
+                                <a href="./register.php">Đăng ký</a>
                             </div>
 
                         </div>

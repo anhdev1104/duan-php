@@ -142,6 +142,8 @@
     text-decoration: none;
     color: #5c5c5c;
     font-weight: 500;
+    margin-top: 20px;
+    display: block;
 }
 
 .login_recover_password {

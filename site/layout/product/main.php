@@ -3,11 +3,10 @@
         <div class="blog_header">
             <div class="container">
                 <div class="blog_header_test">
-                    <span><a href="./index.html">Trang chủ</a></span> <span>/</span> <a href="#">Danh mục</a>
+                    <span><a href="./index.php">Trang chủ</a></span> <span>/</span> <a href="#">Danh mục</a>
                     <span>/</span> <span>Về Morra</span>
                 </div>
             </div>
-
         </div>
         <div class="container">
             <section class="introduce_main-wrap">
@@ -25,7 +24,7 @@
                             <li><a href="">Oriental (hương Phương Đông)</a></li>
                             <li><a href="">Fougere (hương rêu phong)</a></li>
                         </ul>
-                        <div class="prefum_layered">
+                        <!-- <div class="prefum_layered">
                             <div>
                                 <span class="perfumr_layered_subtitle">
                                     GIÁ SẢN PHẨM
@@ -69,7 +68,7 @@
                                 </ul>
                             </div>
 
-                        </div>
+                        </div> -->
                     </div>
                     <div class="product_list_featured">
                         <h1>Nước hoa</h1>
