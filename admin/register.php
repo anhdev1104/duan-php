@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     Privacy
                                     Policy</span> and <span>Terms of Service</span> apply.</p>
                             <div class="action_account_custommer">
-                                <button class="button_login contact_btn" name="register">ĐĂNG KÝ </button>
+                                <button class="button_login contact_btn" type="submit" name="register">ĐĂNG KÝ </button>
                             </div>
                             <a href="../site/index.php" class="register_come_back">
                                 <i class="fa-solid fa-arrow-left-long"></i>
@@ -86,6 +86,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             </a>
                         </form>
                     </div>
+                </div>
+                <div id="toast">
+                    <!-- render js -->
                 </div>
             </section>
         </main>
