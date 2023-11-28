@@ -59,10 +59,26 @@ $query_category = pdo_query($sql_category);
                         } else {
                             include('main/index.php');
                         }
-                    }
                     ?>
                 </div>
             </section>
+            <?php
+                        if ($temp != 'chitietsanpham') {
+                            $sql_page = "SELECT * FROM product WHERE product.category_id='$_GET[id]'";
+                            $row_page = pdo_row_count($sql_page);
+                            $pages = ceil($row_page / $limit);
+            ?>
+                <div class="pagination">
+                    <span class="pagination_title">Trang:</span>
+                    <?php
+                            for ($i = 1; $i <= $pages; $i++) {
+                    ?>
+                        <a <?= ($i == $page) ? 'style="background-color: var(--primary-color); color: var(--white-color);"' : ''; ?> href="product.php?menu=sanphamoi&id=<?= $row_title['id_category']; ?>&page=<?= $i ?>" class="page"><?= $i ?></a>
+            <?php }
+                        }
+                    } ?>
+                </div>
+
         </div>
     </div>
 </main>
