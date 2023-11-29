@@ -136,4 +136,4 @@ $rows_category = pdo_query($sql_category);
             </div>
         </div>
     </div>
-</section>
+</section> 

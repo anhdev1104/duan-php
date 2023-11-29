@@ -1,4 +1,5 @@
 /* toast */
+
 #toast {
     position: fixed;
     top: 50px;
@@ -24,7 +25,6 @@
         opacity: 0;
         transform: translateX(calc(100% + 32px));
     }
-
     to {
         opacity: 1;
         transform: translateX(0);
