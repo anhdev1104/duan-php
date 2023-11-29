@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (isset($_GET['dangxuatuser']) && $_GET['dangxuatuser'] == 1) {
+    unset($_SESSION['register']);
+    unset($_SESSION['login_user']);
+    header('Location: ../admin/login.php');
+}
+
+
 // lấy ra danh mục
 $sql_category = "SELECT * FROM category ORDER BY order_category ASC";
 $rows_category = pdo_query($sql_category);
@@ -35,9 +44,20 @@ $rows_category = pdo_query($sql_category);
                 </div>
                 <div class="header_box-item-fixed">
                     <div class="header_box-action header_box-action-fixed">
-                        <a href="../admin/login.php" class="header_action-item header_action-user">
+                        <div class="account">
+                            <?php
+                            if (isset($_SESSION['register'])) {
+                                echo '<span>Hello! ' . $_SESSION['register'] . '</span>';
+                            } else if (isset($_SESSION['login_user'])) {
+                                echo '<span>Hello! ' . $_SESSION['login_user'] . '</span>';
+                            } else {
+                                echo '<a href="../admin/login.php" class="header_action-item header_action-user">
                             <i class="fa-regular fa-user"></i>
-                        </a>
+                            </a>';
+                            }
+                            ?>
+                            <?= (isset($_SESSION['register']) || isset($_SESSION['login_user'])) ? '<a href="index.php?dangxuatuser=1" class="page-logout">Đăng xuất</a>' : '' ?>
+                        </div>
                         <a href="#" class="header_action-item">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
@@ -63,9 +83,21 @@ $rows_category = pdo_query($sql_category);
                 </a>
                 <div class="header_box-item">
                     <div class="header_box-action">
-                        <a href="../admin/login.php" class="header_action-item header_action-user">
+                        <div class="account">
+                            <?php
+                            if (isset($_SESSION['register'])) {
+                                echo '<span>Hello! ' . $_SESSION['register'] . '</span>';
+                            } else if (isset($_SESSION['login_user'])) {
+                                echo '<span>Hello! ' . $_SESSION['login_user'] . '</span>';
+                            } else {
+                                echo '<a href="../admin/login.php" class="header_action-item header_action-user">
                             <i class="fa-regular fa-user"></i>
-                        </a>
+                            </a>';
+                            }
+                            ?>
+                            <?= (isset($_SESSION['register']) || isset($_SESSION['login_user'])) ? '<a href="index.php?dangxuatuser=1" class="page-logout">Đăng xuất</a>' : '' ?>
+                        </div>
+
                         <a href="#" class="header_action-item">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
