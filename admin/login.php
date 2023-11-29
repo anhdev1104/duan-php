@@ -2,7 +2,7 @@
 session_start();
 include('../config/pdo.php');
 
-if (isset($_POST['login'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['email'];
     $password = md5($_POST['password']);
 
@@ -20,8 +20,6 @@ if (isset($_POST['login'])) {
         $_SESSION['login_user'] = $user_account['fullname'];
         $_SESSION['id_user'] = $user_account['id_user'];
         header('Location: ../site/index.php');
-    } else {
-        $_SESSION['login_error'] = true;
     }
 }
 ?>
@@ -54,19 +52,21 @@ if (isset($_POST['login'])) {
 
                 <div class="login_main_right mt-login">
                     <div class="login_form_reminders">
-                        <form action="" method="POST">
+                        <form action="" id="form-2" method="POST">
                             <div class="login_layout_account" id="loginSection">
-                                <div class="login_form_name">
-                                    <input type="email" name="email" placeholder="Email đăng nhập">
+                                <div class="login_form_name form-group">
+                                    <input type="email" id="email" name="email" placeholder="Email đăng nhập">
+                                    <span class="form-message"></span>
                                 </div>
-                                <div class="login_form_name">
-                                    <input type="password" name="password" placeholder="Mật khẩu">
+                                <div class="login_form_name form-group">
+                                    <input type="password" id="password" name="password" placeholder="Mật khẩu">
+                                    <span class="form-message"></span>
                                 </div>
                                 <p class="contact_protect">This site is protected by reCAPTCHA and the <span>Google
                                         Privacy
                                         Policy</span> and <span>Terms of Service</span> apply.</p>
                                 <div class="action_account_custommer">
-                                    <button class="button_login contact_btn" name="login">ĐĂNG NHẬP</button>
+                                    <button class="button_login contact_btn" type="submit" name="login">ĐĂNG NHẬP</button>
                                     <div>
                                         <a href="#" id="quenMatKhauLink">Quên mật khẩu?</a>
                                         hoặc
@@ -98,10 +98,27 @@ if (isset($_POST['login'])) {
                         </form>
                     </div>
                 </div>
+                <div id="toast">
+                    <!-- render js -->
+                </div>
             </section>
         </main>
     </div>
+    <script src="../site/js/validateForm.js"></script>
     <script src="../site/js/app.js"></script>
+
+    <script>
+        Validator({
+            form: '#form-2',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password', 8),
+            ]
+        });
+    </script>
 
 </body>
 

@@ -45,9 +45,67 @@ function Validator(options) {
 
             // Khi không có lỗi
             if (!isFormValid) {
+                toast(toastSuccess);
                 formElement.submit();
+            } else {
+                toast(toastError);
             }
         };
+
+        // Toast success
+        // Xử lí sự kiện khi success contact form
+        const toastSuccess = {
+            title: 'Thành công !',
+            message: 'Chào mừng bạn đến với MORRA.',
+            type: 'success',
+            duration: 3000,
+            icon: 'fa-solid fa-circle-check',
+        };
+
+        const toastError = {
+            title: 'Thất bại !',
+            message: 'Dữ liệu nhập vào không đúng, vui lòng kiểm tra lại.',
+            type: 'error',
+            duration: 3000,
+            icon: 'fa-solid fa-circle-exclamation',
+        };
+
+        function toast(toastSuccess) {
+            const mainToast = document.querySelector('#toast');
+            if (mainToast) {
+                const toast = document.createElement('div');
+                const delay = (toastSuccess.duration / 1000).toFixed(2);
+
+                toast.classList.add('toast', `toast--${toastSuccess.type}`);
+                toast.style.animation = `slideInLeft .3s ease, fadeOut linear 1s ${delay}s forwards`;
+                toast.innerHTML = `
+                <div class="toast__icon">
+                    <i class="${toastSuccess.icon}"></i>
+                </div>
+                    <div class="toast__body">
+                        <h3 class="toast__title">${toastSuccess.title}</h3>
+                        <p class="toast__msg">${toastSuccess.message}</p>
+                    </div>
+                    <div class="toast__close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+            `;
+                mainToast.appendChild(toast);
+
+                // Auto remove toast
+                const autoRemoveToast = setTimeout(() => {
+                    mainToast.removeChild(toast);
+                }, toastSuccess.duration + 1000);
+
+                // Remove toast when click
+                toast.onclick = function (e) {
+                    if (e.target.closest('.toast__close')) {
+                        mainToast.removeChild(toast);
+                        clearTimeout(autoRemoveToast);
+                    }
+                };
+            }
+        }
 
         // Lặp qua mỗi rule và xử lí (lắng nghe sự kiện blur, input, ... )
         options.rules.forEach((rule) => {
