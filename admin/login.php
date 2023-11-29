@@ -20,6 +20,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['login_user'] = $user_account['fullname'];
         $_SESSION['id_user'] = $user_account['id_user'];
         header('Location: ../site/index.php');
+    } else {
+        echo '<script>alert("Tài khoản hoặc mật khẩu không chính xác, vui lòng kiểm tra lại !")</script>';
     }
 }
 ?>
