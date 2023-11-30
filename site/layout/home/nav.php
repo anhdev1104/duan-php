@@ -4,7 +4,7 @@ session_start();
 if (isset($_GET['dangxuatuser']) && $_GET['dangxuatuser'] == 1) {
     unset($_SESSION['register']);
     unset($_SESSION['login_user']);
-    header('Location: ../admin/login.php');
+    header('Location: index.php');
 }
 
 
@@ -61,7 +61,7 @@ $rows_category = pdo_query($sql_category);
                         <a href="#" class="header_action-item">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
-                        <a href="#" class="header_action-item">
+                        <a href="viewcart.php" class="header_action-item">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <!-- responsive tablet - mobile -->
@@ -101,7 +101,7 @@ $rows_category = pdo_query($sql_category);
                         <a href="#" class="header_action-item">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </a>
-                        <a href="#" class="header_action-item">
+                        <a href="viewcart.php" class="header_action-item">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
                         <!-- responsive tablet - mobile -->
@@ -136,4 +136,4 @@ $rows_category = pdo_query($sql_category);
             </div>
         </div>
     </div>
-</section> 
+</section>
