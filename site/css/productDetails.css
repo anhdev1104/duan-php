@@ -223,7 +223,6 @@
     align-items: center;
     cursor: pointer;
     transition: all .2s linear;
-
 }
 
 .product_related-next {
@@ -235,7 +234,6 @@
     justify-content: center;
     align-items: center;
     transition: all .2s linear;
-
 }
 
 .product_related-prev:hover,
@@ -252,7 +250,6 @@
 .product_related-main::-webkit-scrollbar {
     display: none;
 }
-
 
 .product_related-main {
     overflow-x: auto;

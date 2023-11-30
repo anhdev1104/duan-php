@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/res.css">
+
     <link rel="stylesheet" href="./css/responsive.css">
 </head>
 
@@ -23,6 +23,7 @@
         ?>
     </div>
     <script src="./js/app.js"></script>
+    <script src="./js/validateForm.js"></script>
 </body>
 
 </html>

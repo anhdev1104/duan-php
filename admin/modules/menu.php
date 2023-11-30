@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['dangxuat']) && $_GET['dangxuat'] == 1) {
     unset($_SESSION['login']);
-    header('Location: ./login.php');
+    header('Location: ../index.php');
 }
 ?>
 
