@@ -24,7 +24,7 @@
                             }
                             echo '<div class="head-action-cart">
                             <h2 class="title-number-cart">
-                            Bạn đang có <span>' . $totalQuantityCart . ' sản phẩm</span> trong giỏ hàng
+                            Bạn đang có <b>' . $totalQuantityCart . '</b> sản phẩm trong giỏ hàng
                             </h2>
                             <a href="layout/product/main/cart.php?xoatatca=1" title="Xoá tất cả" class="head-action-item">
                                 <b>Xoá tất cả</b>
@@ -116,54 +116,26 @@
                     </div>
                 </div>
                 <div class="product_list">
-                    <div class="product_item">
-                        <a href="#" class="order_img-box sale30-important">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700503629_sale-3.webp" alt="" class="product_img-1">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700503629_sale-3.2.webp" alt="" class="product_img-2">
-                        </a>
-                        <a href="#" class="product_title">Sữa tắm BST Lumin - Rose Quince 300ml</a>
-                        <p class="product_price-wrap">
-                            <span class="product_price-origin">160.000đ</span>
-                            <span class="product_price-old">260.000đ</span>
-                        </p>
-                        <a href="#" class="button_order">XEM CHI TIẾT</a>
-                    </div>
-                    <div class="product_item">
-                        <a href="#" class="order_img-box sale30-important">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700503411_sale-2.webp" alt="" class="product_img-1">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700503411_sale-2.2.webp" alt="" class="product_img-2">
-                        </a>
-                        <a href="#" class="product_title">Sữa tắm BST Lumin - Harmony Of The Sea 300ml</a>
-                        <p class="product_price-wrap">
-                            <span class="product_price-origin">160.000đ</span>
-                            <span class="product_price-old">260.000đ</span>
-                        </p>
-                        <a href="#" class="button_order">XEM CHI TIẾT</a>
-                    </div>
-                    <div class="product_item">
-                        <a href="#" class="order_img-box sale30-important">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700502637_sale-1.webp" alt="" class="product_img-1">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700502637_sale-1.2.webp" alt="" class="product_img-2">
-                        </a>
-                        <a href="#" class="product_title">Nến thơm Lialily</a>
-                        <p class="product_price-wrap">
-                            <span class="product_price-origin">126.000đ</span>
-                            <span class="product_price-old">180.000đ</span>
-                        </p>
-                        <a href="#" class="button_order">XEM CHI TIẾT</a>
-                    </div>
-                    <div class="product_item">
-                        <a href="#" class="order_img-box sale30-important">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700583229_nuochoa3.webp" alt="" class="product_img-1">
-                            <img src="../admin/modules/quanlyproduct/uploads/1700629687_nuochoa-3.2.webp" alt="" class="product_img-2">
-                        </a>
-                        <a href="#" class="product_title">Nước hoa Gardenia 16</a>
-                        <p class="product_price-wrap">
-                            <span class="product_price-origin">312.000đ</span>
-                            <span class="product_price-old">390.000đ</span>
-                        </p>
-                        <a href="#" class="button_order">XEM CHI TIẾT</a>
-                    </div>
+                    <?php
+                    $limit = 4;
+                    $sql = random_product($limit);
+                    $row_random = pdo_query($sql);
+                    foreach ($row_random as $row) {
+                        extract($row);
+                    ?>
+                        <div class="product_item">
+                            <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="order_img-box sale30-important">
+                                <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="product_img-1">
+                                <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="product_img-2">
+                            </a>
+                            <a href="#" class="product_title"><?= $name_product ?></a>
+                            <p class="product_price-wrap">
+                                <span class="product_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ' ?></span>
+                                <span class="product_price-old"><?= str_replace(',', '.', number_format($origin_price)) . 'đ' ?></span>
+                            </p>
+                            <a href="#" class="button_order">XEM CHI TIẾT</a>
+                        </div>
+                    <?php } ?>
                 </div>
             </div>
             <div class="right_order">
@@ -181,9 +153,18 @@
                                             }
                                             ?>
                             </p>
+                            <div class="summary-vat">
+                                <span>(Đã bao gồm VAT nếu có)</span>
+                            </div>
+                            <div class="summary-freeship">
+                                <div class="freeship-wrap">
+                                    <img src="./img/freeship.png" alt="">
+                                    <span>đã được áp dụng!</span>
+                                </div>
+                            </div>
                         </div>
                         <div class="summary-action">
-                            <p>Bạn có thể nhập mã giảm giá ở trang thanh toán</p>
+                            <!-- <p>Bạn có thể nhập mã giảm giá ở trang thanh toán</p> -->
                             <?php
                             if (isset($_SESSION['register']) || isset($_SESSION['login_user'])) {
                                 echo "<a href='layout/product/main/pay.php' class='checkout-btn'>Đặt hàng</a>";
