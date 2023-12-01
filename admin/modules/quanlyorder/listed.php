@@ -1,5 +1,5 @@
 <?php
-$sql_get_cart = "SELECT * FROM cart_order, user WHERE cart_order.user_id=user.id_user ORDER BY cart_order.id_order DESC";
+$sql_get_cart = "SELECT * FROM cart_order, customer WHERE cart_order.user_id=customer.id_customer ORDER BY cart_order.id_order DESC";
 $query_get_cart = pdo_query($sql_get_cart);
 ?>
 
@@ -10,7 +10,6 @@ $query_get_cart = pdo_query($sql_get_cart);
         <thead class="table-primary">
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Mã đơn hàng</th>
                 <th scope="col">Tên khách hàng</th>
                 <th scope="col">Địa chỉ</th>
                 <th scope="col">Email</th>
@@ -28,11 +27,10 @@ $query_get_cart = pdo_query($sql_get_cart);
             ?>
                 <tr>
                     <th scope="row"><?= $i; ?></th>
-                    <td><?= $code_cart; ?></td>
                     <td><?= $fullname; ?></td>
                     <td style="width: 250px;"><?= $address; ?></td>
                     <td><?= $email; ?></td>
-                    <td><?= '0' . $phonenumber; ?></td>
+                    <td><?= '0' . $phone_number; ?></td>
                     <td>
                         <select class="form-select" name="orderStatus">
                             <?php
@@ -49,7 +47,7 @@ $query_get_cart = pdo_query($sql_get_cart);
                         </select>
                     </td>
                     <td>
-                        <a href="index.php?action=donhang&query=xemdonhang&code=<?= $code_cart; ?>" class="nav-link btn btn-success mx-2">CHI TIẾT</a>
+                        <a href="index.php?action=donhang&query=xemdonhang&key_cart=<?= $key_cart; ?>" class="nav-link btn btn-success mx-2">CHI TIẾT</a>
                     </td>
                 </tr>
             <?php } ?>

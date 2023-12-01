@@ -365,7 +365,6 @@
     padding: 10px 28px;
     line-height: normal;
     color: #fff;
-    /* border: 1px solid #323232; */
     border-radius: 0;
     text-transform: uppercase;
     font-size: 11px;
@@ -391,4 +390,35 @@
     margin: 0 auto;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.summary-vat {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.summary-vat span {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.summary-freeship {
+    display: flex;
+    justify-content: end;
+    margin-top: 10px;
+}
+
+.freeship-wrap {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.freeship-wrap img {
+    width: 70px;
+}
+
+.freeship-wrap span {
+    font-size: 1.2rem;
 }
