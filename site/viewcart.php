@@ -27,6 +27,8 @@
         include './layout/home/footer.php';
         ?>
     </div>
+
+    <script src="./js/app.js"></script>
 </body>
 
 </html>

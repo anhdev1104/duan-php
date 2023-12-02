@@ -58,9 +58,9 @@ $rows_category = pdo_query($sql_category);
                             ?>
                             <?= (isset($_SESSION['register']) || isset($_SESSION['login_user'])) ? '<a href="index.php?dangxuatuser=1" class="page-logout">Đăng xuất</a>' : '' ?>
                         </div>
-                        <a href="#" class="header_action-item">
+                        <div class="header_action-item search">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
+                        </div>
                         <a href="viewcart.php" class="header_action-item">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>
@@ -98,9 +98,9 @@ $rows_category = pdo_query($sql_category);
                             <?= (isset($_SESSION['register']) || isset($_SESSION['login_user'])) ? '<a href="index.php?dangxuatuser=1" class="page-logout">Đăng xuất</a>' : '' ?>
                         </div>
 
-                        <a href="#" class="header_action-item">
+                        <div class="header_action-item search">
                             <i class="fa-solid fa-magnifying-glass"></i>
-                        </a>
+                        </div>
                         <a href="viewcart.php" class="header_action-item">
                             <i class="fa-solid fa-cart-shopping"></i>
                         </a>

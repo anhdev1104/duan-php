@@ -1,4 +1,7 @@
 /* HEADER */
+.search {
+    cursor: pointer;
+}
 
 .account {
     position: relative;
@@ -26,9 +29,10 @@
     text-align: center;
     text-decoration: none;
     padding: 8px 0;
+    border-radius: 4px;
     font-size: 1.4rem;
     display: none;
-    background-color: #eeeeee;
+    background-color: #f4f4f4;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     z-index: 999999999;
     font-weight: 700;
@@ -42,7 +46,7 @@
     right: 12px;
     border-style: solid;
     border-width: 12px 14px;
-    border-color: transparent transparent #eeeeee transparent;
+    border-color: transparent transparent #f4f4f4 transparent;
     z-index: 99999999;
 }
 
@@ -53,7 +57,7 @@
     font-weight: 700;
 }
 
-.header_box-action:hover span {
+.account:hover span {
     color: #20E3B2;
 }
 
@@ -157,9 +161,65 @@
 }
 
 .header_action-item {
+    position: relative;
     text-decoration: none;
     color: #000;
     font-size: 2.4rem;
+}
+
+.header_action-item:nth-child(1):hover::before,
+.header_action-item:nth-child(1):hover::after,
+.header_action-item:nth-child(2):hover::before,
+.header_action-item:nth-child(2):hover::after,
+.header_action-item:nth-child(3):hover::before,
+.header_action-item:nth-child(3):hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.header_action-item:nth-child(1)::before,
+.header_action-item:nth-child(2)::before,
+.header_action-item:nth-child(3)::before {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    right: -2px;
+    border-style: solid;
+    border-width: 12px 14px;
+    border-color: transparent transparent #f4f4f4 transparent;
+    z-index: 99999999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.header_action-item:nth-child(1)::after,
+.header_action-item:nth-child(2)::after,
+.header_action-item:nth-child(3)::after {
+    content: "Giỏ hàng";
+    position: absolute;
+    top: calc(100% + 15px);
+    width: 100px;
+    right: calc(-110px / 2 + 50%);
+    background-color: #f4f4f4;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 20px;
+    padding: 10px 5px;
+    font-size: 1.4rem;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.header_action-item:nth-child(2)::after {
+    content: "Tìm kiếm" !important;
+}
+
+.header_action-item:nth-child(1)::after {
+    content: "Đăng nhập" !important;
 }
 
 .header_box-item--12 {
@@ -263,7 +323,7 @@
 }
 
 
-/* navbar */
+/* ==== navbar ====*/
 
 .navbar {
     display: none;
@@ -289,6 +349,7 @@
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -380,6 +441,89 @@
     font-weight: 600;
 }
 
+/* navbar search */
+.navbar_search {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 50px;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    max-width: 400px;
+    width: 100%;
+    z-index: 9999;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: all ease-in-out .3s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.navbar_search.isActiveNavbar {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.navbar_head-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.navbar_head-title--search {
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.navbar_head-close--search {
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: all .2s linear;
+
+}
+
+.navbar_head-close--search:hover {
+    color: var(--primary-color);
+}
+
+.search-form {
+    position: relative;
+}
+
+.search-form button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 55px;
+    width: 55px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
+.search-form i {
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.search-form .search-input {
+    background: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    border: none;
+    height: 55px;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0 55px 0 20px;
+    margin: 0;
+    display: inline-block;
+    border-radius: 0;
+    -webkit-appearance: none;
+    transition: all 150ms linear;
+    outline: none;
+}
 
 /* header-fixed */
 
