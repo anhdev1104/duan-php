@@ -76,11 +76,11 @@ foreach ($query_details as $row) {
                         extract($row);
                     ?>
                         <div class="product_item">
-                            <a href="#" class="product_img-box">
+                            <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="product_img-box">
                                 <img src="../admin/modules/quanlyproduct/uploads/<?= $path_image ?>" alt="" class="product_img-1">
                                 <img src="../admin/modules/quanlyproduct/uploads/<?= $path_hover ?>" alt="" class="product_img-2">
                             </a>
-                            <a href="#" class="product_title"><?= $name_product ?></a>
+                            <a href="product.php?menu=chitietsanpham&id=<?= $id_product ?>" class="product_title"><?= $name_product ?></a>
                             <p class="product_price-wrap">
                                 <span class="product_price-origin"><?= str_replace(',', '.', number_format($current_price)) . 'đ' ?></span>
                                 <span class="product_price-old"><?= str_replace(',', '.', number_format($origin_price)) . 'đ' ?></span>

@@ -1,7 +1,9 @@
 <?php
 // GET category_name 
-$sql_category = "SELECT * FROM category WHERE category.id_category = '$_GET[id]' LIMIT 1";
-$query_category = pdo_query($sql_category);
+if (!isset($_POST['submit-search'])) {
+    $sql_category = "SELECT * FROM category WHERE category.id_category = '$_GET[id]' LIMIT 1";
+    $query_category = pdo_query($sql_category);
+}
 ?>
 
 <main>
@@ -12,10 +14,14 @@ $query_category = pdo_query($sql_category);
                     <span><a href="./index.php">Trang chủ</a></span>
                     <span>/</span>
                     <?php
-                    foreach ($query_category as $row_title) {
-                    ?>
-                        <a href="#"><?= $row_title['category_name']; ?></a>
-                    <?php } ?>
+                    if (isset($_POST['submit-search'])) {
+                        echo "Tìm kiếm sản phẩm";
+                    } else {
+                        foreach ($query_category as $row_title) {
+                            echo '<a href="#">' . $row_title['category_name'] . '</a>';
+                        }
+                    } ?>
+
                     <?php
                     if (isset($_GET['menu']) == 'chitietsanpham') {
                         $sql_details = "SELECT * FROM product, category WHERE product.category_id=category.id_category AND product.id_product='$_GET[id]' ORDER BY id_product LIMIT 1";
@@ -33,7 +39,7 @@ $query_category = pdo_query($sql_category);
         </div>
         <div class="container">
             <section class="introduce_main-wrap">
-                <div class="prefume_product">
+                <div class="prefume_product" <?= isset($_POST['submit-search']) ? 'style = "display: block !important;"' : '' ?>>
                     <?php
                     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit-search'])) {
                         $item = $_POST['search-item'];
