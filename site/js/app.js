@@ -155,6 +155,19 @@ window.addEventListener('load', () => {
     });
 });
 
+// check empty value search
+window.addEventListener('load', () => {
+    const formSearch = document.querySelector('.search-form');
+    const inputSearch = document.querySelector('[name="search-item"]');
+
+    formSearch.addEventListener('submit', (e) => {
+        if (inputSearch.value.trim() === '') {
+            alert('Vui lòng nhập từ khoá tìm kiếm !');
+            e.preventDefault();
+        }
+    });
+});
+
 /* js recove password */
 document.getElementById('quenMatKhauLink').addEventListener('click', function (event) {
     event.preventDefault(); // Ngăn chặn liên kết mặc định chuyển hướng

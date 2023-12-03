@@ -66,7 +66,7 @@
             <span class="navbar_head-close--search" title="Đóng"><i class="fa-solid fa-xmark"></i></span>
         </div>
         <div class="search-block">
-            <form action="" method="POST" class="search-form">
+            <form action="product.php" method="POST" class="search-form">
                 <input type="text" class="search-input" name="search-item" placeholder="Tìm kiếm sản phẩm...">
                 <button type="submit" name="submit-search"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
             </form>

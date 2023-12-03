@@ -625,6 +625,17 @@ main {
     gap: 20px;
 }
 
+.search-wrap {
+    gap: 0 !important;
+    flex-wrap: wrap;
+    justify-content: unset;
+    margin-left: -10px;
+    margin-right: -10px;
+
+}
+
+
+
 .product_list_perfume {
     margin-top: 30px;
     display: flex;
@@ -638,6 +649,10 @@ main {
     width: 25%;
     max-width: 100%;
     margin-bottom: 20px;
+}
+
+.item-search {
+    padding: 0 10px !important;
 }
 
 .product_item_perfume {

@@ -165,7 +165,7 @@ $rows = pdo_query($sql_product);
                             <span class="product_price-origin">351,000đ</span>
                             <span class="product_price-old">390,000đ</span>
                         </p>
-                        <a href="#" class="button">XEM CHI TIẾT</a>
+                        <a href="product.php?menu=chitietsanpham&id=28" class="button">XEM CHI TIẾT</a>
                     </div>
                 </div>
             </div>
