@@ -23,8 +23,9 @@
         </div>
     </section>
 
-    <!-- navbar menu -->
+    <!-- over-lay -->
     <div class="over-lay"></div>
+    <!-- navbar menu -->
     <div class="navbar_menu">
         <div class="navbar_head">
             <span class="navbar_head-title">MENU</span>
@@ -57,5 +58,18 @@
             <i class="fa-solid fa-user"></i>
             <span>Đăng nhập</span>
         </a>
+    </div>
+    <!-- navbar search -->
+    <div class="navbar_search">
+        <div class="navbar_head-search">
+            <span class="navbar_head-title--search">TÌM KIẾM</span>
+            <span class="navbar_head-close--search" title="Đóng"><i class="fa-solid fa-xmark"></i></span>
+        </div>
+        <div class="search-block">
+            <form action="product.php" method="POST" class="search-form">
+                <input type="text" class="search-input" name="search-item" placeholder="Tìm kiếm sản phẩm...">
+                <button type="submit" name="submit-search"><i class="fa-solid fa-magnifying-glass search-icon"></i></button>
+            </form>
+        </div>
     </div>
 </header>

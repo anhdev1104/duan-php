@@ -18,10 +18,10 @@ window.addEventListener('load', () => {
 // scroll header
 function debounceFn(func, wait, immediate) {
     let timeout;
-    return function() {
+    return function () {
         let context = this,
             args = arguments;
-        let later = function() {
+        let later = function () {
             timeout = null;
             if (!immediate) func.apply(context, args);
         };
@@ -34,7 +34,7 @@ function debounceFn(func, wait, immediate) {
 
 window.addEventListener(
     'scroll',
-    debounceFn(function() {
+    debounceFn(function () {
         const headerFixed = document.querySelector('.header-fixed');
         const scrollY = window.scrollY;
         if (scrollY >= 300) {
@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
     // btn size product details
     const btnSizes = document.querySelectorAll('.details_size');
     btnSizes.forEach((btnSize) => {
-        btnSize.addEventListener('click', function() {
+        btnSize.addEventListener('click', function () {
             [...btnSizes].forEach((item) => item.classList.remove('isActiveSize'));
             this.classList.toggle('isActiveSize');
         });
@@ -59,7 +59,7 @@ window.addEventListener('load', () => {
     const images = document.querySelectorAll('.details-item-img');
     const srcImage = document.querySelector('#srcImage');
     images.forEach((image) =>
-        image.addEventListener('click', function() {
+        image.addEventListener('click', function () {
             [...images].forEach((image) => image.classList.remove('active-img'));
             this.classList.toggle('active-img');
             srcImage.src = this.querySelector('img').src;
@@ -97,7 +97,7 @@ window.addEventListener('load', () => {
     }
     btnPrev.addEventListener('click', handlePrevClick);
 
-    listRelated.addEventListener('wheel', function(e) {
+    listRelated.addEventListener('wheel', function (e) {
         console.log(this);
         e.preventDefault();
         const delta = e.deltaY * 3.3;
@@ -105,7 +105,7 @@ window.addEventListener('load', () => {
     });
 });
 
-// Navbar
+// Navbar - menu
 window.addEventListener('load', () => {
     const navbarIcons = document.querySelectorAll('.navbar-icon');
     const navbarClose = document.querySelector('.navbar_head-close');
@@ -130,8 +130,46 @@ window.addEventListener('load', () => {
     });
 });
 
+// Navbar - search
+window.addEventListener('load', () => {
+    const searchIcons = document.querySelectorAll('.search');
+    const searchClose = document.querySelector('.navbar_head-close--search');
+    const overLay = document.querySelector('.over-lay');
+    const navbarSearch = document.querySelector('.navbar_search');
+
+    searchIcons.forEach((navbarIcon) =>
+        navbarIcon.addEventListener('click', () => {
+            overLay.classList.add('isActiveOverlay');
+            navbarSearch.classList.add('isActiveNavbar');
+        })
+    );
+
+    overLay.addEventListener('click', () => {
+        overLay.classList.remove('isActiveOverlay');
+        navbarSearch.classList.remove('isActiveNavbar');
+    });
+
+    searchClose.addEventListener('click', () => {
+        overLay.classList.remove('isActiveOverlay');
+        navbarSearch.classList.remove('isActiveNavbar');
+    });
+});
+
+// check empty value search
+window.addEventListener('load', () => {
+    const formSearch = document.querySelector('.search-form');
+    const inputSearch = document.querySelector('[name="search-item"]');
+
+    formSearch.addEventListener('submit', (e) => {
+        if (inputSearch.value.trim() === '') {
+            alert('Vui lòng nhập từ khoá tìm kiếm !');
+            e.preventDefault();
+        }
+    });
+});
+
 /* js recove password */
-document.getElementById('quenMatKhauLink').addEventListener('click', function(event) {
+document.getElementById('quenMatKhauLink').addEventListener('click', function (event) {
     event.preventDefault(); // Ngăn chặn liên kết mặc định chuyển hướng
 
     // Ẩn phần đăng nhập
@@ -150,7 +188,7 @@ document.getElementById('quenMatKhauLink').addEventListener('click', function(ev
     this.style.display = 'none';
 });
 
-document.getElementById('huyButton').addEventListener('click', function(event) {
+document.getElementById('huyButton').addEventListener('click', function (event) {
     event.preventDefault();
 
     // Ẩn ô nhập email
@@ -171,7 +209,7 @@ document.getElementById('huyButton').addEventListener('click', function(event) {
     quenMatKhauLink.style.display = 'block';
 });
 
-document.getElementById('emailSubmitButton').addEventListener('click', function(event) {
+document.getElementById('emailSubmitButton').addEventListener('click', function (event) {
     event.preventDefault();
 
     // Kiểm tra xem email đã được nhập
@@ -186,7 +224,7 @@ document.getElementById('emailSubmitButton').addEventListener('click', function(
     emailInputDiv.style.display = 'none';
 });
 
-document.getElementById('guiYeuCauButton').addEventListener('click', function(event) {
+document.getElementById('guiYeuCauButton').addEventListener('click', function (event) {
     event.preventDefault();
 
     // Lấy giá trị email và mật khẩu
@@ -200,7 +238,7 @@ document.getElementById('guiYeuCauButton').addEventListener('click', function(ev
         alert('Yêu cầu đã được gửi đi.');
     }
 });
-document.getElementById('emailSubmitButton').addEventListener('click', function(event) {
+document.getElementById('emailSubmitButton').addEventListener('click', function (event) {
     event.preventDefault();
 
     // Kiểm tra xem email đã được nhập
