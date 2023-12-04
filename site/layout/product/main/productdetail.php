@@ -1,5 +1,6 @@
 <?php
-// include '../../../../config/product.php';
+include "../config/comment.php";
+
 
 $sql_details = "SELECT * FROM product, category WHERE product.category_id=category.id_category AND product.id_product='$_GET[id]' ORDER BY id_product LIMIT 1";
 $query_details = pdo_query($sql_details);
@@ -56,6 +57,56 @@ foreach ($query_details as $row) {
                 <?php } ?>
                 </div>
             </form>
+
+            <div class="details-comment">
+                <div class="comment-heading">ĐÁNH GIÁ SẢN PHẨM</div>
+                <form action="" method="POST" class="comment-form">
+                    <div class="form-control">
+                        <input type="hidden" name="product_id_comment" value="<?= $id_product ?>">
+                        <?php
+                        $name_user_comment = $_SESSION['login_user'] ?? '';
+                        $name_register_comment = $_SESSION['register'] ?? '';
+                        ?>
+                        <input type="hidden" name="name_user_comment" value="<?php
+                                                                                if ($name_user_comment) {
+                                                                                    echo $name_user_comment;
+                                                                                } else if ($name_register_comment) {
+                                                                                    echo $name_register_comment;
+                                                                                } else {
+                                                                                    echo "";
+                                                                                }
+                                                                                ?>">
+                        <input type="text" class="comment-input" name="comment" placeholder="Feedback sản phẩm">
+                        <button type="submit" name="submit_comment" class="comment-submit" title="Gửi"><i class="fa-regular fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                <?php
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_comment'])) {
+                    $comment = insert_comment();
+                    if ($comment === 'login_required') {
+                ?>
+                        <script>
+                            alert('Vui lòng đăng nhập để đánh giá sản phẩm !');
+                        </script>
+                    <?php } else if ($comment === 'comment_required') { ?>
+                        <script>
+                            alert('Không được để bình luận trống !');
+                        </script>
+                    <?php } ?>
+
+                <?php
+                }
+                $sql = select_comment();
+                $rows = pdo_query($sql);
+                foreach ($rows as $row) {
+                    extract($row);
+                ?>
+                    <div class="comment-user">
+                        <h2 class="comment-name"><?= $name_cmt ?></h2>
+                        <p class="comment-note"><?= $note ?></p>
+                    </div>
+                <?php } ?>
+            </div>
 
             <h1 class="product_related-title">Sản phẩm liên quan</h1>
             <div class="product_related">
