@@ -116,7 +116,7 @@ $rows = pdo_query($sql_product);
     </section>
     <section class="section">
         <div class="gift_wrap">
-            <a href="#" class="gift_item">
+            <a href="product.php?menu=sanpham&id=1" class="gift_item">
                 <img src="./img/gift-1.webp" alt="" class="gift_img">
                 <div class="gift_info">
                     <h2 class="gift_title">Dấu hương mới</h2>
@@ -127,7 +127,7 @@ $rows = pdo_query($sql_product);
                 </div>
             </a>
 
-            <a href="#" class="gift_item">
+            <a href="product.php?menu=sanpham&id=3" class="gift_item">
                 <img src="./img/gift-2.webp" alt="" class="gift_img">
                 <div class="gift_info">
                     <h2 class="gift_title">Bộ sưu tập</h2>
@@ -138,7 +138,7 @@ $rows = pdo_query($sql_product);
                 </div>
             </a>
 
-            <a href="#" class="gift_item">
+            <a href="product.php?menu=chitietsanpham&id=34" class="gift_item">
                 <img src="./img/gift-3.webp" alt="" class="gift_img">
                 <div class="gift_info">
                     <h2 class="gift_title">Set quà tặng</h2>
