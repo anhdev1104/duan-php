@@ -93,7 +93,7 @@
                                     <div class="pay_radio">
                                         <input type="radio" name="" id="" class="input_radio">
                                     </div>
-                                    <span>Giao tận nơi</span>
+                                    <span>Nhận tại của hàng</span>
                                 </label>
                             </div>
 
@@ -143,7 +143,7 @@
             </div>
             <div class="discount_code">
                 <tbody>
-                    <tr class="total_line td">
+                    <tr>
                         <td>Tạm tính</td>
                         <td>312,000₫</td>
                     </tr>
