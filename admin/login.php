@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_account = pdo_query_one($user_sql);
 
     if ($account) {
-        $_SESSION['login'] = $account;
+        $_SESSION['login_admin'] = $account;
         header('Location: index.php');
     } else if ($user_account) {
         $_SESSION['login_user'] = $user_account['fullname'];
@@ -70,33 +70,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="action_account_custommer">
                                     <button class="button_login contact_btn" type="submit" name="login">ĐĂNG NHẬP</button>
                                     <div>
-                                        <a href="#" id="quenMatKhauLink">Quên mật khẩu?</a>
-                                        hoặc
+
                                         <a href="./register.php">Đăng ký</a>
                                     </div>
                                 </div>
+                                <a href="../site/index.php" class="register_come_back">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                    Quay lại trang chủ
+                                </a>
                             </div>
-                            <div class="recove_password">
-                                <div id="emailInputDiv" style="display: none;" class="login_form_name">
-                                    <h2>Phục hồi mật khẩu</h2><br>
-                                    <label for="email"></label>
-                                    <input type="email" id="email" placeholder="Nhập địa chỉ email">
-                                    <p class="contact_protect">This site is protected by reCAPTCHA and the <span>Google
-                                            Privacy
-                                            Policy</span> and <span>Terms of Service</span> apply.</p>
-                                    <button id="emailSubmitButton" class="button_login contact_btn">Gửi</button>
-                                </div>
-                                <div id="passwordInputDiv" style="display: none;" class="login_form_name">
-                                    <h2>Phục hồi mật khẩu</h2><br>
-                                    <label for="password"></label>
-                                    <input type="password" id="password" placeholder="Nhập mật khẩu mới">
-                                    <p class="contact_protect">This site is protected by reCAPTCHA and the <span>Google
-                                            Privacy
-                                            Policy</span> and <span>Terms of Service</span> apply.</p>
-                                    <button id="guiYeuCauButton" name="" class="button_login contact_btn">Gửi yêu cầu</button>
-                                </div>
-                                <a href="#" id="huyButton" style="text-decoration: none;color: #747474;display: none;">Hủy</a>
-                            </div>
+
                         </form>
                     </div>
                 </div>

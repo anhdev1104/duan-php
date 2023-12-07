@@ -1,0 +1,54 @@
+#invoice {
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 80%;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+#invoice-header {
+    text-align: center;
+}
+
+#invoice-header,
+#customer-details,
+#product-table,
+#payment-details {
+    margin-bottom: 20px;
+    line-height: 2.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+th,
+td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+#total {
+    font-weight: bold;
+    color: crimson;
+    margin-bottom: 20px;
+}
+
+b {
+    margin-left: 8px;
+}
