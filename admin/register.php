@@ -2,6 +2,7 @@
 session_start();
 include('../config/pdo.php');
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name_user = $_POST['fullname'];
     $email_user = $_POST['email'];
@@ -79,6 +80,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                     Policy</span> and <span>Terms of Service</span> apply.</p>
                             <div class="action_account_custommer">
                                 <button class="button_login contact_btn" type="submit" name="register">ĐĂNG KÝ </button>
+                                <div>
+
+                                    <a href="./login.php">Đăng nhập</a>
+                                </div>
                             </div>
                             <a href="../site/index.php" class="register_come_back">
                                 <i class="fa-solid fa-arrow-left-long"></i>
