@@ -14,6 +14,7 @@ $query_get_cart = pdo_query($sql_get_cart);
                 <th scope="col">Địa chỉ</th>
                 <th scope="col">Email</th>
                 <th scope="col">Số điện thoại</th>
+                <th scope="col">Ngày đặt hàng</th>
                 <th scope="col">Tình trạng</th>
                 <th scope="col">Quản lý</th>
             </tr>
@@ -31,19 +32,28 @@ $query_get_cart = pdo_query($sql_get_cart);
                     <td style="width: 250px;"><?= $address; ?></td>
                     <td><?= $email; ?></td>
                     <td><?= '0' . $phone_number; ?></td>
+                    <td><?= $order_date; ?></td>
                     <td>
                         <select class="form-select" name="orderStatus">
                             <?php
                             if ($order_status == 1) {
                             ?>
                                 <option value="1" selected>Đơn hàng mới</option>
-                                <option value="0">Đã giao hàng</option>
+                                <option value="2">Đã giao hàng</option>
+                                <option value="3">Đã huỷ</option>
                             <?php
-                            } else {
+                            } else if ($order_status == 2) {
                             ?>
-                                <option value="0" selected>Đã giao hàng</option>
+                                <option value="2" selected>Đã giao hàng</option>
+                                <option value="1">Đơn hàng mới</option>
+                                <option value="3">Đã huỷ</option>
+                            <?php } else {
+                            ?>
+                                <option value="3" selected>Đã huỷ</option>
+                                <option value="2">Đã giao hàng</option>
                                 <option value="1">Đơn hàng mới</option>
                             <?php } ?>
+
                         </select>
                     </td>
                     <td>
