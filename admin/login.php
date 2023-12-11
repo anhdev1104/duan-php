@@ -70,8 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <div class="action_account_custommer">
                                     <button class="button_login contact_btn" type="submit" name="login">ĐĂNG NHẬP</button>
                                     <div>
-
                                         <a href="./register.php">Đăng ký</a>
+                                        <a href="./changepass.php" style="margin-left: 5px">Đổi mật khẩu</a>
                                     </div>
                                 </div>
                                 <a href="../site/index.php" class="register_come_back">
