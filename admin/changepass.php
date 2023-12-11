@@ -1,26 +1,27 @@
 <?php
 session_start();
-include('../config/pdo.php');
+include '../config/pdo.php';
 
-if (isset($_POST['changepass'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['email'];
-    $password_old = md5($_POST['password_old']); 
-    $password_new = md5($_POST['password_new']); 
+    $password_old = md5($_POST['password_old']);
+    $password_new = md5($_POST['password_new']);
 
-    // Kiểm tra thông tin đăng nhập trong bảng 'user'
-    $user_sql = "SELECT * FROM user WHERE email = '$username' AND password = '$password_old' LIMIT 1";
-    $user_result = mysqli_query($conn, $user_sql);
-    $user_account = mysqli_fetch_array($user_result);
-    
+    // Kiểm tra thông tin đăng nhập trong bảng 'customer'
+    $user_sql = "SELECT * FROM customer WHERE email = '$username' AND password = '$password_old'";
+    $user_account = pdo_query($user_sql);
+
     if ($user_account) {
-        $sql_update = mysqli_query($conn, "UPDATE user SET password = '$password_new' LIMIT 1");
-
+        // Cập nhật mật khẩu nếu tài khoản tồn tại
+        $sql_update = "UPDATE customer SET password = '$password_new' WHERE email = '$username' AND password = '$password_old' LIMIT 1";
+        pdo_query_one($sql_update);
         echo "<script>alert('Tạo lại mật khẩu thành công !')</script>";
     } else {
         echo "<script>alert('Tài khoản hoặc mật khẩu chưa chính xác, vui lòng nhập lại !')</script>";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,39 +30,80 @@ if (isset($_POST['changepass'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đổi mật khẩu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../site/css/base.css">
-    <link rel="stylesheet" href="../site/css/register.css">
+    <link rel="stylesheet" href="../site/css/style.css">
+    <link rel="stylesheet" href="../site/css/responsive.css">
+    <link rel="stylesheet" href="../site/css/contact.css">
+    <link rel="stylesheet" href="../site/css/login.css">
 </head>
 
 <body>
-    <div class="app">
-        <main class="register wraper">
-            <section class="register-left">
-                <img src="../site/img/login2.jpg" alt="" class="register-img">
-            </section>
-            <section class="register-right">
-                <h1 class="register-heading">ĐỔI MẬT KHẨU</h1>
+    <div class="root">
+        <main>
+            <section class="login_main-wrapper">
+                <div class="header_account">
+                    <div class="login_header">
+                        <h1>Đổi mật khẩu</h1>
+                    </div>
+                </div>
 
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" id="form2">
-                    <div class="form-group">
-                        <label for="email" class="title">Email</label>
-                        <input type="email" name="email" id="email" class="input" placeholder="Email đăng nhập" required>
+                <div class="login_main_right mt-login">
+                    <div class="login_form_reminders">
+                        <form action="" id="form-3" method="POST">
+                            <div class="login_layout_account" id="loginSection">
+                                <div class="login_form_name form-group">
+                                    <input type="email" id="email" name="email" placeholder="Email đăng nhập">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="login_form_name form-group">
+                                    <input type="password" name="password_old" id="password_old" class="input" placeholder="Nhập mật khẩu cũ">
+                                    <span class="form-message"></span>
+                                </div>
+                                <div class="login_form_name form-group">
+                                    <input type="password" name="password_new" id="password_new" class="input" placeholder="Nhập mật khẩu mới">
+                                    <span class="form-message"></span>
+                                </div>
+                                <p class="contact_protect">This site is protected by reCAPTCHA and the <span>Google
+                                        Privacy
+                                        Policy</span> and <span>Terms of Service</span> apply.</p>
+                                <div class="action_account_custommer">
+                                    <button class="button_login contact_btn" type="submit" name="changepass">Đổi mật khẩu</button>
+                                    <div>
+                                        <a href="./login.php">Đăng nhập</a>
+                                    </div>
+                                </div>
+                                <a href="../site/index.php" class="register_come_back">
+                                    <i class="fa-solid fa-arrow-left-long"></i>
+                                    Quay lại trang chủ
+                                </a>
+                            </div>
+
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="password_old" class="title">Mật khẩu cũ</label>
-                        <input type="password" name="password_old" id="password_old" class="input" placeholder="Nhập tối thiểu 6 kí tự" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password_new" class="title">Mật khẩu mới</label>
-                        <input type="password" name="password_new" id="password_new" class="input" placeholder="Nhập tối thiểu 6 kí tự" required>
-                    </div>
-                    <a href="./login.php" class="register-link">Quay về trang đăng nhập.</a>
-                    <button type="submit" name="changepass" class="btn-form">THIẾT LẬP LẠI MẬT KHẨU</button>
-                </form>
+                </div>
+                <div id="toast">
+                    <!-- render js -->
+                </div>
             </section>
         </main>
     </div>
+    <script src="../site/js/validateForm.js"></script>
+    <script src="../site/js/app.js"></script>
+
+    <script>
+        Validator({
+            form: '#form-3',
+            formGroupSelector: '.form-group',
+            errorSelector: '.form-message',
+            rules: [
+                Validator.isRequired('#email'),
+                Validator.isEmail('#email'),
+                Validator.minLength('#password_old', 8),
+            ]
+        });
+    </script>
+
 </body>
 
 </html>
