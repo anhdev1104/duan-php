@@ -53,7 +53,7 @@ if (isset($_POST['addproduct'])) {
     // delete
     $id = $_GET['idproduct'];
     $sql = "SELECT * FROM product WHERE id_product = '$id' LIMIT 1";
-    $query = pdo_query_one($sql);
+    $query = pdo_query($sql);
     foreach ($query as $row) {
         unlink('./uploads/' . $row['path_image']);
         unlink('./uploads/' . $row['path_hover']);
